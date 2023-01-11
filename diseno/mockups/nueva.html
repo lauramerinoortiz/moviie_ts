@@ -26,42 +26,37 @@
 			</ul>
 		</nav>
 	</header>
-	<h1>Datos de la película</h1>
-	<div id="datos">
-        <table>
-            <tr>
-                <th>Nombre</th>
-                <td>Mujercitas</td>
-            <tr>
-                <th>Descripción</th>
-                <td>Amy, Jo, Beth y Meg son cuatro hermanas que atraviesan Massachussets 
-                    con su madre durante la Guerra Civil, unas vacaciones que realizan sin su padre evangelista itinerante. 
-                    Durante estas vacaciones las adolescentes descubren el amor y la importancia de los lazos familiares. </td>
-            </tr>
-            <tr>
-                <th>Fecha de estreno</th>
-                <td>25/12/2019</td>
-            </tr>
-            <tr>
-                <th>Duración</th>
-                <td>135s</td>
-            </tr>
-            <tr>
-                <th>Género</th>
-                <td>Drama</td>
-            </tr>
-            <tr>
-                <th>Plataformas</th>
-                <td>HBO</td>
-            </tr>
-            <tr>
-                <th>¿Vista?</th>
-                <td>No</td>
-            </tr>
-        </table>
-
-        <button id="btnEliminar">Eliminar</button>
-        <button id="btnModificar">Modificar</button>
+	<h1>Nueva película</h1>
+	<div id="nueva">
+        <form>
+            <label>Nombre</label>
+            <input type="text"><br>
+            <label>Descripción</label>
+            <textarea></textarea><br>
+            <label>Fecha de estreno</label>
+            <input type="date"><br>
+            <label>Duración</label>
+            <input type="number"><br>
+            <label>Género</label>
+            <select>
+                <option>Drama</option>
+                <option>Comedia</option>
+                <option>Misterio</option>
+                <option>Terror</option>
+                <option>Histórica</option>
+                <option>Infantil</option>
+            </select><br>
+            <label>Plataforma disponible:</label>
+            <label><input type="checkbox" value="HBO">HBO</label>
+            <label><input type="checkbox" value="Netflix">Netflix</label>
+            <label><input type="checkbox" value="Disney">Disney+</label><br>
+            <label><input type="checkbox" value="Netflix">Amazon Prime</label>
+            <label><input type="checkbox" value="Netflix">YouTube</label>
+            <label><input type="checkbox" value="Netflix">Movistar</label><br>
+            <label><input type="checkbox" value="Netflix">Apple TV+</label>
+        </form>
+        <button id="btnEliminar">Cancelar</button>
+        <button id="btnModificar">Enviar</button>
     </div>
 	<footer>
 		<p>Moviie es una web para la organización de películas</p>

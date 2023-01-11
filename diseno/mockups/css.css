@@ -59,7 +59,7 @@ header nav ul li:last-child{
 }
 
 header nav ul li:first-child{
-    flex-grow: 5;
+    flex-grow: 6;
     flex-shrink: 1;
 }
 
@@ -68,7 +68,7 @@ header nav ul li:first-child{
 }
 
 #icono{
-    height: 50px;
+    height: 40px;
 }
 
 #li1{
@@ -159,16 +159,16 @@ header nav ul li:first-child{
     margin: auto;
 }
 
-#datos button{
+#datos button, #nueva button{
     margin: 50px 20px 0 20px;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 10px;
     border-radius: 15px;
     transition: 0.4s;
     cursor: pointer;
 }
 
-#datos button:hover{
+#datos button:hover, #nueva button:hover{
     padding: 13px;
 }
 
@@ -180,6 +180,18 @@ header nav ul li:first-child{
 #btnModificar{
     background-color: #4ea2f5;
     color: black;
+}
+
+
+/*NUEVA PELICULA*/
+#nueva form{
+    color: white;
+    font-family: "Century Gothic";
+}
+
+#nueva form input,label, select{
+    margin: 15px 10px;
+    font-size: 17px;
 }
 
 
