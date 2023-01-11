@@ -194,6 +194,10 @@ header nav ul li:first-child{
     font-size: 17px;
 }
 
+.caja{
+   width: 49%;
+   display: inline-block;
+}
 
 /*FOOTER*/
 footer{
