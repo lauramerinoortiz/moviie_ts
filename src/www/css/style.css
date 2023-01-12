@@ -175,12 +175,12 @@ header nav ul li:first-child{
     padding: 13px;
 }
 
-#btnEliminar{
+.btnEliminar{
     background-color: #ff3359;
     color: black;
 }
 
-#btnModificar{
+.btnModificar{
     background-color: #4ea2f5;
     color: black;
 }
