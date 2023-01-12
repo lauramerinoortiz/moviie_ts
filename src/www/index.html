@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+	<meta charset=utf-8 />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name=author content="Laura Merino" />
+	<title>Moviie</title>
+	<link rel=stylesheet href=css/style.css />
+    <link rel="shotcut icon" href="assets//logo/logosimple.svg">
+</head>
+<body>
+    <!-- NAV MENU -->
+	<header>
+		<nav>
+			<ul>
+				<li id="li1">
+					<img src="assets/logo/logo.svg" alt="Logo Moviie" id="logo" >
+				</li>
+				<li>
+					Listado
+				</li>
+				<li>
+					Nueva
+				</li>
+				<li>
+					<img src="assets/iconos/busqueda.png" alt="Icono de búsqueda" id="icono">
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- DIV DE INICIO CON LISTADO -->
+	<div id="inicio">
+        <div id="listado">
+        <h1>Listado de películas</h1>
+		<div class="pelicula" id="peli1">
+			<div class="oculto"></div>
+			<h2>Elite</h2>
+		</div>
+		<div class="pelicula" id="peli2">
+			<div class="oculto"></div>
+			<h2>Las ventajas de ser un marginado</h2>
+		</div>
+		<div class="pelicula" id="peli3">
+			<div class="oculto"></div>
+			<h2>Mujercitas</h2>
+		</div>
+		<div class="pelicula" id="peli4">
+			<div class="oculto"></div>
+			<h2>Shrek</h2>
+		</div>
+		<div class="pelicula" id="peli5">
+			<div class="oculto"></div>
+			<h2>Wakanda</h2>
+		</div>
+		<div class="pelicula" id="peli6">
+			<div class="oculto"></div>
+			<h2>Titanic</h2>
+		</div>
+    </div>
+	</div>
+
+    <!-- DIV NUEVA PELICULA -->
+    <div id="nueva">
+        <h1>Nueva película</h1>
+        <form>
+            <div class="caja"><label>Nombre</label>
+                <input type="text" required><br>
+                <label>Descripción</label>
+                <textarea></textarea><br>
+                <label>Fecha de estreno</label>
+                <input type="date"><br>
+                <label>Duración</label>
+                <input type="number"><br>
+            </div>
+            <div class="caja"><label>Género</label>
+                <select>
+                    <option>Drama</option>
+                    <option>Comedia</option>
+                    <option>Misterio</option>
+                    <option>Terror</option>
+                    <option>Histórica</option>
+                    <option>Infantil</option>
+                </select><br>
+                <label>Plataforma disponible:</label>
+                <label><input type="checkbox" value="HBO">HBO</label>
+                <label><input type="checkbox" value="Netflix">Netflix</label>
+                <label><input type="checkbox" value="Disney">Disney+</label><br>
+                <label><input type="checkbox" value="Netflix">Amazon Prime</label>
+                <label><input type="checkbox" value="Netflix">YouTube</label>
+                <label><input type="checkbox" value="Netflix">Movistar</label><br>
+                <label><input type="checkbox" value="Netflix">Apple TV+</label><br>
+                <label>Añadir imagen <input type="file"></label>
+            </div>
+            
+        </form>
+        <button id="btnEliminar">Cancelar</button>
+        <button id="btnModificar">Enviar</button>
+    </div>
+
+    <!-- DIV CON LOS DATOS DE LA PELICULA -->
+    <div id="datos">
+        <h1>Datos de la película</h1>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <td>Mujercitas</td>
+            <tr>
+                <th>Descripción</th>
+                <td>Amy, Jo, Beth y Meg son cuatro hermanas que atraviesan Massachussets 
+                    con su madre durante la Guerra Civil, unas vacaciones que realizan sin su padre evangelista itinerante. 
+                    Durante estas vacaciones las adolescentes descubren el amor y la importancia de los lazos familiares. </td>
+            </tr>
+            <tr>
+                <th>Fecha de estreno</th>
+                <td>25/12/2019</td>
+            </tr>
+            <tr>
+                <th>Duración</th>
+                <td>135s</td>
+            </tr>
+            <tr>
+                <th>Género</th>
+                <td>Drama</td>
+            </tr>
+            <tr>
+                <th>Plataformas</th>
+                <td>HBO</td>
+            </tr>
+            <tr>
+                <th>¿Vista?</th>
+                <td>No</td>
+            </tr>
+        </table>
+
+        <button id="btnEliminar">Eliminar</button>
+        <button id="btnModificar">Modificar</button>
+    </div>
+
+    <!-- DIV DE MENSAJE DE CONFIRMACION PARA ELIMINAR -->
+    <div id="eliminar">
+        <h1>¿Seguro que quieres eliminar esta película?</h1>
+        <p>Esta acción no se puede deshacer.</p>
+        <button id="btnEliminar">Cancelar</button>
+        <button id="btnModificar">Aceptar</button>
+    </div>
+    
+    <!-- DIV PARA MODIFICAR PELICULA -->
+    <div id="modificar">
+        <h1>Editar película</h1>
+        <form>
+            <div class="caja"><label>Nombre</label>
+                <input type="text" value="Nombre de peli"><br>
+                <label>Descripción</label>
+                <textarea>Descripción precisa de la película</textarea><br>
+                <label>Fecha de estreno</label>
+                <input type="date" value="2019-12-25"><br>
+                <label>Duración</label>
+                <input type="number" value="120"><br>
+            </div>
+            <div class="caja"><label>Género</label>
+                <select>
+                    <option selected>Drama</option>
+                    <option>Comedia</option>
+                    <option>Misterio</option>
+                    <option>Terror</option>
+                    <option>Histórica</option>
+                    <option>Infantil</option>
+                </select><br>
+                <label>Plataforma disponible:</label>
+                <label><input type="checkbox" value="HBO" checked>HBO</label>
+                <label><input type="checkbox" value="Netflix">Netflix</label>
+                <label><input type="checkbox" value="Disney">Disney+</label><br>
+                <label><input type="checkbox" value="Amazon">Amazon Prime</label>
+                <label><input type="checkbox" value="Youtube">YouTube</label>
+                <label><input type="checkbox" value="Movistar">Movistar</label><br>
+                <label><input type="checkbox" value="Apple">Apple TV+</label><br>
+                <label>Añadir imagen <input type="file"></label>
+            </div>
+        </form>
+        <button id="btnEliminar">Cancelar</button>
+        <button id="btnModificar">Enviar</button>
+    </div>
+
+    <!-- FOOTER -->
+	<footer>
+		<p>Moviie es una web para la organización de películas</p>
+	</footer>
+    <script type="module" src="js/controladores/app.js"></script>
+</body>
+</html>
