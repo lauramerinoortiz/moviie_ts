@@ -220,3 +220,12 @@ footer{
     padding: 30px;
     text-align: left;
 }
+
+footer p{
+    float: left;
+}
+
+footer img{
+    float: right;
+    height: 100%;
+}
