@@ -212,6 +212,14 @@ header nav ul li:first-child{
     color:white
 }
 
+#buscar{
+    color: white;
+}
+
+#genero{
+    margin-left: 60px;
+}
+
 /*FOOTER*/
 footer{
     height: 40px;
@@ -221,9 +229,6 @@ footer{
     text-align: left;
 }
 
-#buscar{
-    color: white;
-}
 
 footer p{
     float: left;
