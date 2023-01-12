@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+	<meta charset=utf-8 />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name=author content="Laura Merino" />
+	<title>Moviie</title>
+	<link rel=stylesheet href=css.css />
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li id="li1">
+					<img src="imagencorporativa/logo/logo.svg" alt="Logo Moviie" id="logo" >
+				</li>
+				<li>
+					Listado
+				</li>
+				<li>
+					Nueva
+				</li>
+				<li>
+					<img src="iconos/busqueda.png" alt="Icono de búsqueda" id="icono">
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<h1>Nueva película</h1>
+	<div id="nueva">
+        <form>
+            <div class="caja"><label>Nombre</label>
+                <input type="text"><br>
+                <label>Descripción</label>
+                <textarea></textarea><br>
+                <label>Fecha de estreno</label>
+                <input type="date"><br>
+                <label>Duración</label>
+                <input type="number"><br>
+            </div>
+            <div class="caja"><label>Género</label>
+                <select>
+                    <option>Drama</option>
+                    <option>Comedia</option>
+                    <option>Misterio</option>
+                    <option>Terror</option>
+                    <option>Histórica</option>
+                    <option>Infantil</option>
+                </select><br>
+                <label>Plataforma disponible:</label>
+                <label><input type="checkbox" value="HBO">HBO</label>
+                <label><input type="checkbox" value="Netflix">Netflix</label>
+                <label><input type="checkbox" value="Disney">Disney+</label><br>
+                <label><input type="checkbox" value="Netflix">Amazon Prime</label>
+                <label><input type="checkbox" value="Netflix">YouTube</label>
+                <label><input type="checkbox" value="Netflix">Movistar</label><br>
+                <label><input type="checkbox" value="Netflix">Apple TV+</label><br>
+                <label>Añadir imagen <input type="file"></label>
+            </div>
+            
+        </form>
+        <button id="btnEliminar">Cancelar</button>
+        <button id="btnModificar">Enviar</button>
+    </div>
+	<footer>
+		<p>Moviie es una web para la organización de películas</p>
+	</footer>
+</body>
+</html>
