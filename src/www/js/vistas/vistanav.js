@@ -12,11 +12,13 @@ export class VistaNav{
 		this.controlador = controlador
 		this.nav = nav
 		
+		this.liLogo = this.nav.getElementsByTagName('li')[0]
 		this.liListado = this.nav.getElementsByTagName('li')[1]
 		this.liNuevo = this.nav.getElementsByTagName('li')[2]
 		
 		this.liListado.onclick = this.pulsarListado.bind(this)
 		this.liNuevo.onclick = this.pulsarNuevo.bind(this)
+		this.liLogo.onclick = this.pulsarListado.bind(this)
 	}
 
 	/**
