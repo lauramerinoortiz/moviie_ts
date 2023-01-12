@@ -23,7 +23,7 @@ class Controlador {
 	 * Método iniciar que es el primero en ejecutarse cuando se carga la pantalla
 	 */
 	iniciar() {
-		console.log('¡Bienvenido a Glocal Island!')
+		console.log('¡Bienvenido a Moviie! La diversión no está aquí.')
 		this.modelo=new Modelo(this)
 
         this.nav = document.getElementsByTagName('nav')[0]
