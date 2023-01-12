@@ -6,6 +6,7 @@ import {VistaNueva} from '../vistas/vistanueva.js'
 import {VistaDatos} from '../vistas/vistadatos.js'
 import {VistaEliminar} from '../vistas/vistaeliminar.js'
 import {VistaModificar} from '../vistas/vistamodificar.js'
+import {VistaBuscar} from '../vistas/vistabuscar.js'
 /**
  * Clase Controlador que administra las vistas
  */
@@ -42,6 +43,9 @@ class Controlador {
 
         this.divModificar=document.getElementById('modificar')
         this.vistaModificar=new VistaModificar(this.divModificar, this)
+
+		this.divBuscar=document.getElementById('buscar')
+        this.vistaBuscar=new VistaBuscar(this.divBuscar, this)
 		
         this.ocultarVistas()
 		this.vistaListado.mostrar(true)
@@ -58,10 +62,11 @@ class Controlador {
         this.vistaDatos.mostrar(false)
         this.vistaEliminar.mostrar(false)
         this.vistaModificar.mostrar(false)
+		this.vistaBuscar.mostrar(false)
 	}
 
 	/**
-	 * Método pulsarLogo que oculta las vistas y muestra la del inicio
+	 * Método pulsarListado que oculta las vistas y muestra la del inicio
 	 */
 	pulsarNavListado() {
 		this.ocultarVistas()
@@ -69,11 +74,19 @@ class Controlador {
 	}
 
     /**
-	 * Método pulsarLogo que oculta las vistas y muestra la del inicio
+	 * Método pulsarNuevo que oculta las vistas y muestra la del formulario de alta
 	 */
 	pulsarNavNuevo() {
 		this.ocultarVistas()
 		this.vistaNueva.mostrar(true)
+	}
+
+	/**
+	 * Método pulsarBuscar que oculta las vistas y muestra la del busqueda
+	 */
+	pulsarNavBuscar() {
+		this.ocultarVistas()
+		this.vistaBuscar.mostrar(true)
 	}
 
     /**

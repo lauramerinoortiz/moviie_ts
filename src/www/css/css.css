@@ -162,7 +162,7 @@ header nav ul li:first-child{
     margin: auto;
 }
 
-#datos button, #nueva button, #eliminar button, #modificar button{
+#datos button, #nueva button, #eliminar button, #modificar button, #buscar button{
     margin: 50px 20px 0 20px;
     font-size: 1.3em;
     padding: 10px;
@@ -171,7 +171,7 @@ header nav ul li:first-child{
     cursor: pointer;
 }
 
-#datos button:hover, #nueva button:hover, #eliminar button:hover, #modificar button:hover{
+#datos button:hover, #nueva button:hover, #eliminar button:hover, #modificar button:hover, #buscar button:hover{
     padding: 13px;
 }
 
@@ -210,6 +210,14 @@ header nav ul li:first-child{
 /*ELIMINAR PELICULA*/
 #eliminar p{
     color:white
+}
+
+#buscar{
+    color: white;
+}
+
+#genero{
+    margin-left: 60px;
 }
 
 /*FOOTER*/

@@ -15,10 +15,12 @@ export class VistaNav{
 		this.liLogo = this.nav.getElementsByTagName('li')[0]
 		this.liListado = this.nav.getElementsByTagName('li')[1]
 		this.liNuevo = this.nav.getElementsByTagName('li')[2]
+		this.liBuscar = this.nav.getElementsByTagName('li')[3]
 		
 		this.liListado.onclick = this.pulsarListado.bind(this)
 		this.liNuevo.onclick = this.pulsarNuevo.bind(this)
 		this.liLogo.onclick = this.pulsarListado.bind(this)
+		this.liBuscar.onclick = this.pulsarBuscar.bind(this)
 	}
 
 	/**
@@ -29,10 +31,17 @@ export class VistaNav{
 	}
 
 	/**
-	 *	Atención a la pulsación sobre el enlace de categorías
+	 *	Atención a la pulsación sobre el enlace de nuevo
 	 */
 	pulsarNuevo() {
 		this.controlador.pulsarNavNuevo()
+	}
+
+	/**
+	 *	Atención a la pulsación sobre el enlace de buscar
+	 */
+	 pulsarBuscar() {
+		this.controlador.pulsarNavBuscar()
 	}
 
 }

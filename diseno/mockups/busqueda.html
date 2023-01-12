@@ -27,33 +27,26 @@
 			</ul>
 		</nav>
 	</header>
-	<h1>Listado de películas</h1>
-	<div id="listado">
-		<div class="pelicula" id="peli1">
-			<div class="oculto"></div>
-			<h2>Elite</h2>
-		</div>
-		<div class="pelicula" id="peli2">
-			<div class="oculto"></div>
-			<h2>Las ventajas de ser un marginado</h2>
-		</div>
-		<div class="pelicula" id="peli3">
-			<div class="oculto"></div>
-			<h2>Mujercitas</h2>
-		</div>
-		<div class="pelicula" id="peli4">
-			<div class="oculto"></div>
-			<h2>Shrek</h2>
-		</div>
-		<div class="pelicula" id="peli5">
-			<div class="oculto"></div>
-			<h2>Wakanda</h2>
-		</div>
-		<div class="pelicula" id="peli6">
-			<div class="oculto"></div>
-			<h2>Titanic</h2>
-		</div>
-	</div>
+    <div id="buscar">
+	    <h1>Añade estado y género</h1>
+        <form>
+            <label for="vista">¿Vista?</label>
+            <input type="radio" id="vistaSi" name="vista" value="Si"><label for="vistaSi">Si</label>
+            <input type="radio" id="vistaNo" name="vista" value="No"><label for="vistaNo">No</label>
+
+            <label id="genero">Género</label>
+                <select>
+                    <option>Drama</option>
+                    <option>Comedia</option>
+                    <option>Misterio</option>
+                    <option>Terror</option>
+                    <option>Histórica</option>
+                    <option>Infantil</option>
+                </select>
+
+                <button class="btnModificar">Enviar</button>
+        </form>
+    </div>
 	<footer>
 		<p>Moviie es una web para la organización de películas</p>
 		<img src="../../src/www/assets/recursos/wcag2AA.png">
