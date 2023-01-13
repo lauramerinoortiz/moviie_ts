@@ -1,7 +1,7 @@
 "use strict" //activo modo estricto
 import {Vista} from './vista.js'
 /**
- * Clase VistaNueva que muestra el formulario para una nueva pelicula
+ * Clase VistaDatos que muestra el formulario para una nueva pelicula
  * Gestiona los elementos y métodos de esta Vista
  */
 export class VistaDatos extends Vista {
@@ -24,11 +24,17 @@ export class VistaDatos extends Vista {
 
 	}
 
+     /**
+      * Método para cuando damos al boton eliminar
+      */
      pulsarEliminar(){
           this.controlador.ocultarVistas()
           this.controlador.mostrarEliminar()
      }
 
+     /**
+      * Método para cuando damos al boton modificar
+      */
      pulsarModificar(){
           this.controlador.ocultarVistas()
           this.controlador.mostrarModificar()

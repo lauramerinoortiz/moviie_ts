@@ -1,13 +1,13 @@
 "use strict" //activo modo estricto
 import {Vista} from './vista.js'
 /**
- * Clase VistaCategorias que muestra el CRUD de categorías y subcategorías
+ * Clase VistaListado que muestra el CRUD de categorías y subcategorías
  * Gestiona los elementos y métodos de esta Vista
  */
 export class VistaListado extends Vista {
 
 	/**
-     * Contructor de la clase VistaCategorias
+     * Contructor de la clase VistaListado
      * @param {HTMLDivElement} div Div de la vista
      * @param {Object} controlador Controlador de la vista
      */
@@ -30,7 +30,9 @@ export class VistaListado extends Vista {
           this.pelicula5.onclick=this.pulsarPelicula.bind(this)
           this.pelicula6.onclick=this.pulsarPelicula.bind(this)
 	}
-
+     /**
+      * Método para cuando damos click a una pelicula
+      */
      pulsarPelicula(){
           this.controlador.pulsarPelicula()
      }

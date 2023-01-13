@@ -7,7 +7,7 @@ import {Vista} from './vista.js'
 export class VistaNueva extends Vista {
 
 	/**
-     * Contructor de la clase VistaCategorias
+     * Contructor de la clase VistaNueva
      * @param {HTMLDivElement} div Div de la vista
      * @param {Object} controlador Controlador de la vista
      */
@@ -22,11 +22,16 @@ export class VistaNueva extends Vista {
           this.aceptar=this.div.getElementsByTagName('button')[1]
           this.aceptar.onclick = this.pulsarAceptar.bind(this)
 	}
-
+     /**
+      * Método para cuando damos al boton cancelar
+      */
      pulsarCancelar() {
           this.controlador.pulsarCancelar()
      }
 
+     /**
+      * Método para cuando damos al boton aceptar
+      */
      pulsarAceptar() {
           this.controlador.pulsarCancelar()
      }

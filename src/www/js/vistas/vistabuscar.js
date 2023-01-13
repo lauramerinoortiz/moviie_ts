@@ -1,7 +1,7 @@
 "use strict" //activo modo estricto
 import {Vista} from './vista.js'
 /**
- * Clase VistaBuecar que muestra el formulario para buscar una pelicula
+ * Clase VistaBuscar que muestra el formulario para buscar una pelicula
  * Gestiona los elementos y métodos de esta Vista
  */
 export class VistaBuscar extends Vista {
@@ -22,6 +22,9 @@ export class VistaBuscar extends Vista {
 
 	}
 
+     /**
+      * Método para cuando pulsamos el boton aceptar
+      */
      pulsarAceptar() {
           this.controlador.pulsarCancelar()
      }

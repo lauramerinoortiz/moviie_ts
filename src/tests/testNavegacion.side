@@ -4,28 +4,24 @@
   "name": "Moviie",
   "url": "https://lauramerinoortiz.github.io/proyectoCliente/src/www/index.html",
   "tests": [{
-    "id": "88b53aaa-05f0-4bbb-8dbd-1f4214cf7916",
-    "name": "Untitled",
-    "commands": []
-  }, {
-    "id": "61eb85c3-472e-4494-9268-244a0bf1482b",
-    "name": "navegacionPorPaginas",
+    "id": "5720b477-78ca-4d25-bd0e-2f0a5201f42d",
+    "name": "navegacionNav",
     "commands": [{
-      "id": "e878a8b4-4b5d-415a-902b-db420ad5f025",
+      "id": "10d8020e-51fa-4694-92fd-2e5da4da6e52",
       "comment": "",
       "command": "open",
       "target": "https://lauramerinoortiz.github.io/proyectoCliente/src/www/index.html",
       "targets": [],
       "value": ""
     }, {
-      "id": "94d9ed6a-7dd4-496f-b021-6344de4aa5e8",
+      "id": "881a5884-d07f-4b16-a1c6-ccc571f634a1",
       "comment": "",
       "command": "setWindowSize",
       "target": "1236x728",
       "targets": [],
       "value": ""
     }, {
-      "id": "95c061d8-00c6-4a11-84dc-9ce3fb3d4199",
+      "id": "fcf3c148-94af-491d-a0ed-31ad8db921dd",
       "comment": "",
       "command": "verifyText",
       "target": "css=#listado > h1",
@@ -37,7 +33,7 @@
       ],
       "value": "Listado de películas"
     }, {
-      "id": "94e61cf5-907a-4b4a-ba36-38897f46af8a",
+      "id": "75778bea-db80-4849-a821-d86dbc6caaac",
       "comment": "",
       "command": "click",
       "target": "css=li:nth-child(3)",
@@ -48,7 +44,7 @@
       ],
       "value": ""
     }, {
-      "id": "dfbd640d-18f4-4028-81dc-bec7aec26bdb",
+      "id": "36f37dd2-7d89-4deb-9ce0-52bd06d5f96f",
       "comment": "",
       "command": "verifyText",
       "target": "css=#nueva > h1",
@@ -60,7 +56,32 @@
       ],
       "value": "Nueva película"
     }, {
-      "id": "120bda59-b5fb-462e-adb4-e68375a3e0be",
+      "id": "d5041091-8749-4655-afd9-a80dc35c7777",
+      "comment": "",
+      "command": "click",
+      "target": "id=icono",
+      "targets": [
+        ["id=icono", "id"],
+        ["css=#icono", "css:finder"],
+        ["xpath=//img[@alt='Icono de búsqueda para buscar un elemento concreto']", "xpath:img"],
+        ["xpath=//img[@id='icono']", "xpath:attributes"],
+        ["xpath=//li[4]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f90d3c0-38c2-44df-a354-3f9379d55580",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#buscar > h1",
+      "targets": [
+        ["css=#buscar > h1", "css:finder"],
+        ["xpath=//div[@id='buscar']/h1", "xpath:idRelative"],
+        ["xpath=//div[6]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Añade estado y género')]", "xpath:innerText"]
+      ],
+      "value": "Añade estado y género"
+    }, {
+      "id": "c05e4707-9a77-43b6-8ea9-decf0f0158e7",
       "comment": "",
       "command": "click",
       "target": "css=li:nth-child(2)",
@@ -71,7 +92,7 @@
       ],
       "value": ""
     }, {
-      "id": "61848e4e-c4e9-4689-8844-f349df8e911e",
+      "id": "3b42e77a-b22f-4e3f-9b9a-0706ee6980b5",
       "comment": "",
       "command": "verifyText",
       "target": "css=#listado > h1",
@@ -83,9 +104,95 @@
       ],
       "value": "Listado de películas"
     }, {
-      "id": "78d74860-f277-4e61-aa7e-66328b89d3de",
+      "id": "aa854059-e577-4ade-a35b-d270439ad8dd",
       "comment": "",
       "command": "click",
+      "target": "css=li:nth-child(3)",
+      "targets": [
+        ["css=li:nth-child(3)", "css:finder"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'Nueva')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1737741-bd99-4c35-b5b1-17aa526fd5d6",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#nueva > h1",
+      "targets": [
+        ["css=#nueva > h1", "css:finder"],
+        ["xpath=//div[@id='nueva']/h1", "xpath:idRelative"],
+        ["xpath=//div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Nueva película')]", "xpath:innerText"]
+      ],
+      "value": "Nueva película"
+    }, {
+      "id": "ddda52b2-309d-4a4d-b400-858116a102c7",
+      "comment": "",
+      "command": "click",
+      "target": "id=logo",
+      "targets": [
+        ["id=logo", "id"],
+        ["css=#logo", "css:finder"],
+        ["xpath=//img[@alt='Moviie logo de la web con el nombre']", "xpath:img"],
+        ["xpath=//img[@id='logo']", "xpath:attributes"],
+        ["xpath=//li[@id='li1']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e5e3132-b4d4-4cb2-aa16-673ce07c2a7f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#listado > h1",
+      "targets": [
+        ["css=#listado > h1", "css:finder"],
+        ["xpath=//div[@id='listado']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Listado de películas')]", "xpath:innerText"]
+      ],
+      "value": "Listado de películas"
+    }, {
+      "id": "c42557a0-eeb5-4c47-bb33-26fe07db0d9b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a9e300e4-432c-480b-b096-46d7eb2c05c1",
+    "name": "navegacionPeliculas",
+    "commands": [{
+      "id": "0d66d09a-6fd0-45b9-8300-efe126072170",
+      "comment": "",
+      "command": "open",
+      "target": "https://lauramerinoortiz.github.io/proyectoCliente/src/www/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db6d02bb-8b5e-4ba6-9446-7661622f840c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1236x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4023f101-9b64-467b-8abf-5b31099aa26c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#listado > h1",
+      "targets": [
+        ["css=#listado > h1", "css:finder"],
+        ["xpath=//div[@id='listado']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Listado de películas')]", "xpath:innerText"]
+      ],
+      "value": "Listado de películas"
+    }, {
+      "id": "5f6ee1f3-393c-41fb-8def-803b8e6eaf99",
+      "comment": "",
+      "command": "mouseMoveAt",
       "target": "css=#peli1 > .oculto",
       "targets": [
         ["css=#peli1 > .oculto", "css:finder"],
@@ -94,7 +201,18 @@
       ],
       "value": ""
     }, {
-      "id": "a6aaeb3e-55a3-4a67-8788-381cc0342361",
+      "id": "6ffafdff-95c5-4777-a680-49b83478dba8",
+      "comment": "",
+      "command": "click",
+      "target": "css=#peli1",
+      "targets": [
+        ["css=#peli1 > .oculto", "css:finder"],
+        ["xpath=//div[@id='peli1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9256aed-324d-47fd-9751-90de7be51200",
       "comment": "",
       "command": "verifyText",
       "target": "css=#datos > h1",
@@ -106,7 +224,7 @@
       ],
       "value": "Datos de la película"
     }, {
-      "id": "7eab7fc0-fd0e-42fa-a266-ee72e79d61f9",
+      "id": "a79de6e0-2080-4040-9cbc-9c3fd1e25131",
       "comment": "",
       "command": "click",
       "target": "css=#datos > .btnEliminar",
@@ -118,7 +236,7 @@
       ],
       "value": ""
     }, {
-      "id": "69553b56-4dc4-43f5-b47e-00205c983f69",
+      "id": "786e47c6-7a37-493b-9f19-d2bf1b723b96",
       "comment": "",
       "command": "verifyText",
       "target": "css=#eliminar > h1",
@@ -130,7 +248,40 @@
       ],
       "value": "¿Seguro que quieres eliminar esta película?"
     }, {
-      "id": "55fc9d8a-8ed8-456e-9669-8647e8a01619",
+      "id": "43e87ac8-b7b4-4b87-8ad6-563d4679de2b",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=#eliminar > .btnEliminar",
+      "targets": [
+        ["css=#eliminar > .btnEliminar", "css:finder"],
+        ["xpath=//div[@id='eliminar']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"]
+      ],
+      "value": "70.6875,26"
+    }, {
+      "id": "be88723e-6ba1-484a-9d7a-e148c845626f",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=#eliminar > .btnEliminar",
+      "targets": [
+        ["css=#eliminar > .btnEliminar", "css:finder"],
+        ["xpath=//div[@id='eliminar']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"]
+      ],
+      "value": "70.6875,26"
+    }, {
+      "id": "ae9740b8-ad4f-4e36-9746-4f6514b34057",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=#eliminar > .btnEliminar",
+      "targets": [
+        ["css=#eliminar > .btnEliminar", "css:finder"],
+        ["xpath=//div[@id='eliminar']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"]
+      ],
+      "value": "70.6875,26"
+    }, {
+      "id": "e71a86cf-9674-49a9-bb4f-ad3253e336b5",
       "comment": "",
       "command": "click",
       "target": "css=#eliminar > .btnEliminar",
@@ -141,7 +292,7 @@
       ],
       "value": ""
     }, {
-      "id": "c104a77f-7a31-4bfd-8f95-01af14e9246f",
+      "id": "795c2389-18f4-4441-b261-b82fbd8100fc",
       "comment": "",
       "command": "verifyText",
       "target": "css=#listado > h1",
@@ -153,9 +304,9 @@
       ],
       "value": "Listado de películas"
     }, {
-      "id": "bd4591d0-0451-4125-a6a0-6c513099a2c0",
+      "id": "ee1ec62b-6ff2-4e09-b44f-d5f11538297f",
       "comment": "",
-      "command": "click",
+      "command": "mouseDown",
       "target": "css=#peli1 > .oculto",
       "targets": [
         ["css=#peli1 > .oculto", "css:finder"],
@@ -164,7 +315,100 @@
       ],
       "value": ""
     }, {
-      "id": "dfc98b38-9a8f-42d2-90db-1db03939e3fe",
+      "id": "c5b36f9b-1cce-4755-afae-670c70077ff3",
+      "comment": "",
+      "command": "click",
+      "target": "css=#peli1 ",
+      "targets": [
+        ["css=#peli1 > .oculto", "css:finder"],
+        ["xpath=//div[@id='peli1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d122b8fc-949c-4de0-9714-6d2cf0d1ed0a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#datos > .btnEliminar",
+      "targets": [
+        ["css=#datos > .btnEliminar", "css:finder"],
+        ["xpath=//div[@id='datos']/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Eliminar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "788a9be1-d34b-4d96-90c0-4518f9a32092",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#eliminar > h1",
+      "targets": [
+        ["css=#eliminar > h1", "css:finder"],
+        ["xpath=//div[@id='eliminar']/h1", "xpath:idRelative"],
+        ["xpath=//div[4]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'¿Seguro que quieres eliminar esta película?')]", "xpath:innerText"]
+      ],
+      "value": "¿Seguro que quieres eliminar esta película?"
+    }, {
+      "id": "011142cd-30b6-4ebd-ac7e-3ff1c9d504ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=#eliminar > .btnModificar",
+      "targets": [
+        ["css=#eliminar > .btnModificar", "css:finder"],
+        ["xpath=//div[@id='eliminar']/button[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Aceptar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0e68517-4ed9-47ed-9118-e1db4fd8f4df",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#listado > h1",
+      "targets": [
+        ["css=#listado > h1", "css:finder"],
+        ["xpath=//div[@id='listado']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Listado de películas')]", "xpath:innerText"]
+      ],
+      "value": "Listado de películas"
+    }, {
+      "id": "f03ae837-8dca-40e3-a018-497d2c2b6e85",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=#peli1 > .oculto",
+      "targets": [
+        ["css=#peli1 > .oculto", "css:finder"],
+        ["xpath=//div[@id='peli1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a7b6102-1f7f-440f-829c-7debc4851135",
+      "comment": "",
+      "command": "click",
+      "target": "css=#peli1 ",
+      "targets": [
+        ["css=#peli1 > .oculto", "css:finder"],
+        ["xpath=//div[@id='peli1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa3a5118-5f3f-43c3-94fe-2274f8753cf8",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#datos > h1",
+      "targets": [
+        ["css=#datos > h1", "css:finder"],
+        ["xpath=//div[@id='datos']/h1", "xpath:idRelative"],
+        ["xpath=//div[3]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Datos de la película')]", "xpath:innerText"]
+      ],
+      "value": "Datos de la película"
+    }, {
+      "id": "b21da13f-8757-4bfd-bfa9-36812cf726bc",
       "comment": "",
       "command": "click",
       "target": "css=#datos > .btnModificar",
@@ -176,7 +420,7 @@
       ],
       "value": ""
     }, {
-      "id": "06011dbf-8b4f-462a-9f84-f1706d2484be",
+      "id": "434729d9-848f-4d13-b60c-a5caa5a4513a",
       "comment": "",
       "command": "verifyText",
       "target": "css=#modificar > h1",
@@ -188,18 +432,18 @@
       ],
       "value": "Editar película"
     }, {
-      "id": "719491f5-4ac1-4f4a-bfbc-3b1e56a85295",
+      "id": "07653b7a-6815-4dd2-a203-5ff6bd5c288d",
       "comment": "",
       "command": "click",
-      "target": "css=#modificar > .btnModificar",
+      "target": "css=#modificar > .btnEliminar",
       "targets": [
-        ["css=#modificar > .btnModificar", "css:finder"],
-        ["xpath=//div[@id='modificar']/button[2]", "xpath:idRelative"],
-        ["xpath=//div[5]/button[2]", "xpath:position"]
+        ["css=#modificar > .btnEliminar", "css:finder"],
+        ["xpath=//div[@id='modificar']/button", "xpath:idRelative"],
+        ["xpath=//div[5]/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "21d60fb6-6e90-48ee-a930-ebb0bcf56028",
+      "id": "68d2e167-a104-44f2-8366-8d548ff76ac1",
       "comment": "",
       "command": "verifyText",
       "target": "css=#listado > h1",
@@ -211,7 +455,125 @@
       ],
       "value": "Listado de películas"
     }, {
-      "id": "5f740e9b-ce4a-4234-a453-691360a60fc8",
+      "id": "0002b53e-c0b4-4488-8edf-87fc0074922f",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=#peli1 > .oculto",
+      "targets": [
+        ["css=#peli1 > .oculto", "css:finder"],
+        ["xpath=//div[@id='peli1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f409096-d0dc-409a-b9e3-7b59fb90d60f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#peli1 ",
+      "targets": [
+        ["css=#peli1 > .oculto", "css:finder"],
+        ["xpath=//div[@id='peli1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "088d064b-aabb-4430-bb12-7d3672fd7b07",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#datos > h1",
+      "targets": [
+        ["css=#datos > h1", "css:finder"],
+        ["xpath=//div[@id='datos']/h1", "xpath:idRelative"],
+        ["xpath=//div[3]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Datos de la película')]", "xpath:innerText"]
+      ],
+      "value": "Datos de la película"
+    }, {
+      "id": "05bfab94-09a7-4870-8454-cbbc4efe4512",
+      "comment": "",
+      "command": "click",
+      "target": "css=#datos > .btnModificar",
+      "targets": [
+        ["css=#datos > .btnModificar", "css:finder"],
+        ["xpath=//div[@id='datos']/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Modificar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "af5c6fca-4e15-4386-b91a-7a1a544d1657",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#modificar > h1",
+      "targets": [
+        ["css=#modificar > h1", "css:finder"],
+        ["xpath=//div[@id='modificar']/h1", "xpath:idRelative"],
+        ["xpath=//div[5]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Editar película')]", "xpath:innerText"]
+      ],
+      "value": "Editar película"
+    }, {
+      "id": "fb21262b-e423-4944-ac07-2c30932855b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modificar > .btnEliminar",
+      "targets": [
+        ["css=#modificar > .btnEliminar", "css:finder"],
+        ["xpath=//div[@id='modificar']/button", "xpath:idRelative"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b950810-0745-4c19-b268-e29ab0432b62",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#listado > h1",
+      "targets": [
+        ["css=#listado > h1", "css:finder"],
+        ["xpath=//div[@id='listado']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Listado de películas')]", "xpath:innerText"]
+      ],
+      "value": "Listado de películas"
+    }, {
+      "id": "fe78ee22-0b4b-4006-ad0f-549ddb99fd52",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "659384b6-a046-4e82-b7d9-b5cf067f4171",
+    "name": "navegacionNueva",
+    "commands": [{
+      "id": "b898c7e5-7077-4462-84e3-d639ff568427",
+      "comment": "",
+      "command": "open",
+      "target": "https://lauramerinoortiz.github.io/proyectoCliente/src/www/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bfef6dc2-3d60-4c4d-9e4a-413e45d82850",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1236x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5863b683-2f22-4617-a858-e7a88138741e",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#listado > h1",
+      "targets": [
+        ["css=#listado > h1", "css:finder"],
+        ["xpath=//div[@id='listado']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Listado de películas')]", "xpath:innerText"]
+      ],
+      "value": "Listado de películas"
+    }, {
+      "id": "98a537a0-655c-438f-be65-b693498b8a3a",
       "comment": "",
       "command": "click",
       "target": "css=li:nth-child(3)",
@@ -222,7 +584,7 @@
       ],
       "value": ""
     }, {
-      "id": "522eaef2-705f-42a6-8a3b-e0010f4a2360",
+      "id": "dc929152-1eb1-4db5-a6ca-f19ef37b7620",
       "comment": "",
       "command": "verifyText",
       "target": "css=#nueva > h1",
@@ -234,7 +596,7 @@
       ],
       "value": "Nueva película"
     }, {
-      "id": "bf156217-374f-47dc-ab38-7f11310dafd4",
+      "id": "fc89bd36-041f-46ba-9695-df54d9e2d165",
       "comment": "",
       "command": "click",
       "target": "css=#nueva > .btnEliminar",
@@ -246,7 +608,7 @@
       ],
       "value": ""
     }, {
-      "id": "c2b80e74-8ca2-4f06-9433-ff2566be3e7b",
+      "id": "60631d0a-0fac-4574-965d-34e4bbb94eae",
       "comment": "",
       "command": "verifyText",
       "target": "css=#listado > h1",
@@ -258,7 +620,7 @@
       ],
       "value": "Listado de películas"
     }, {
-      "id": "f59b3dfb-1bc5-42e1-bbb6-4e53fbdf3eec",
+      "id": "c8146ee6-4835-4842-9347-f69909c606a9",
       "comment": "",
       "command": "click",
       "target": "css=li:nth-child(3)",
@@ -269,7 +631,7 @@
       ],
       "value": ""
     }, {
-      "id": "dd7a60ba-9940-478b-a1c8-770af182906b",
+      "id": "c2a07ec8-3710-4019-93e6-df906748ae51",
       "comment": "",
       "command": "verifyText",
       "target": "css=#nueva > h1",
@@ -281,7 +643,7 @@
       ],
       "value": "Nueva película"
     }, {
-      "id": "0e4188a1-3ee7-4ab3-9984-85e2833d53f9",
+      "id": "010267a0-cdc3-44c8-ad87-f18a74c7c895",
       "comment": "",
       "command": "click",
       "target": "css=#nueva > .btnModificar",
@@ -293,7 +655,7 @@
       ],
       "value": ""
     }, {
-      "id": "8d5056a6-9eab-41a3-9c18-99d6b3bbdc26",
+      "id": "39f740fd-8b6c-4fba-81d3-f1ee561f06ae",
       "comment": "",
       "command": "verifyText",
       "target": "css=#listado > h1",
@@ -305,7 +667,7 @@
       ],
       "value": "Listado de películas"
     }, {
-      "id": "7cc6bef4-a175-4482-9138-080d12ce3322",
+      "id": "b1ba9cf5-39ef-4855-85bb-fe879b950408",
       "comment": "",
       "command": "close",
       "target": "",
@@ -319,7 +681,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["88b53aaa-05f0-4bbb-8dbd-1f4214cf7916"]
+    "tests": []
   }],
   "urls": ["https://lauramerinoortiz.github.io/proyectoCliente/src/www/index.html"],
   "plugins": []

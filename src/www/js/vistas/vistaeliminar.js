@@ -1,13 +1,13 @@
 "use strict" //activo modo estricto
 import {Vista} from './vista.js'
 /**
- * Clase VistaNueva que muestra el formulario para una nueva pelicula
+ * Clase VistaNueva que muestra el mensaje de confirmacion para eliminar
  * Gestiona los elementos y métodos de esta Vista
  */
 export class VistaEliminar extends Vista {
 
 	/**
-     * Contructor de la clase VistaDatos
+     * Contructor de la clase VistaEliminar
      * @param {HTMLDivElement} div Div de la vista
      * @param {Object} controlador Controlador de la vista
      */
@@ -24,10 +24,16 @@ export class VistaEliminar extends Vista {
 
 	}
 
+     /**
+      * Método para cuando pulsamos el boton cancelar
+      */
      pulsarCancelar() {
           this.controlador.pulsarCancelar()
      }
 
+     /**
+      * Método para cuando pulsamos el boton aceptar
+      */
      pulsarAceptar() {
           this.controlador.pulsarCancelar()
      }
