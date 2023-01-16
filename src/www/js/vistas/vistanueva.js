@@ -103,7 +103,6 @@ export class VistaNueva extends Vista {
                insertado.style.display='block'
           }
 
-          
      }
 
      /**

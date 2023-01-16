@@ -1,3 +1,5 @@
+"use strict" //activo modo estricto
+
 export class Pelicula{
     constructor(){
         this.nombre=''     //texto corto

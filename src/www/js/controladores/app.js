@@ -23,7 +23,7 @@ class Controlador {
 	 * Método iniciar que es el primero en ejecutarse cuando se carga la pantalla
 	 */
 	iniciar() {
-		console.log('¡Bienvenido a Moviie! La diversión no está aquí.')
+		console.log('¡Bienvenido a Moviie! La diversión te espera fuera de la consola.')
 		this.modelo=new Modelo(this)
 
         this.nav = document.getElementsByTagName('nav')[0]
