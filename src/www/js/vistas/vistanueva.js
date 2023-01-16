@@ -33,6 +33,28 @@ export class VistaNueva extends Vista {
       * Método para cuando damos al boton aceptar
       */
      pulsarAceptar() {
-          this.controlador.pulsarCancelar()
+          let nombre=document.getElementById('nombre').value
+          console.log('nombre: ',nombre)
+
+          let descripcion=document.getElementById('descripcion').value
+          console.log('descripcion: ',descripcion)
+
+          let fecha=document.getElementById('fecha').value
+          console.log('fecha: ',fecha)
+
+          let duracion=document.getElementById('duracion').value
+          console.log('duracion: ',duracion)
+
+          if(document.getElementById('vistaSi').checked){
+               let vista=document.getElementById('vistaSi').value
+               console.log('vista: ',vista)
+          }
+          else{
+               let vista=document.getElementById('vistaNo').value
+               console.log('vista: ',vista)
+          }
+
+          let genero=document.getElementsByTagName('select')
+          console.log('genero: ',genero)
      }
 }

@@ -69,9 +69,9 @@
                 <label for="descripcion">Descripción</label>
                 <textarea id="descripcion"></textarea><br>
                 <label>Fecha de estreno</label>
-                <input type="date"><br>
+                <input type="date" id="fecha"><br>
                 <label>Duración</label>
-                <input type="number"><br>
+                <input type="number" id="duracion"><br>
                 <label for="vista">¿Vista?</label>
                 <input type="radio" id="vistaSi" name="vista" value="Si"><label for="vistaSi">Si</label>
                 <input type="radio" id="vistaNo" name="vista" value="No"><label for="vistaNo">No</label>
@@ -154,16 +154,16 @@
         <h1>Editar película</h1>
         <form>
             <div class="caja"><label for="nombre">Nombre</label>
-                <input type="text" value="Nombre de peli" id="nombre"><br>
+                <input type="text" value="Nombre de peli" id="nombreEditar"><br>
                 <label for="descripcionEditar">Descripción</label>
                 <textarea id="descripcionEditar">Descripción precisa de la película</textarea><br>
                 <label>Fecha de estreno</label>
-                <input type="date" value="2019-12-25"><br>
+                <input type="date" value="2019-12-25" id="fechaEditar"><br>
                 <label>Duración</label>
-                <input type="number" value="120"><br>
+                <input type="number" value="120" id="duracionEditar"><br>
                 <label for="vista">¿Vista?</label>
-                <input type="radio" id="vistaSi" name="vista" value="Si" ><label for="vistaSi">Si</label>
-                <input type="radio" id="vistaNo" name="vista" value="No" checked><label for="vistaNo">No</label>
+                <input type="radio" id="vistaSiEditar" name="vista" value="Si" ><label for="vistaSi">Si</label>
+                <input type="radio" id="vistaNoEditar" name="vista" value="No" checked><label for="vistaNo">No</label>
 
             </div>
             <div class="caja"><label for="generoEditar">Género</label>
