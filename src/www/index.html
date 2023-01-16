@@ -65,16 +65,16 @@
         <h1>Nueva película</h1>
         <form>
             <div class="caja"><label for="nombre">Nombre</label>
-                <input type="text" required id="nombre"><br>
+                <input type="text" id="nombre"><br>
                 <label for="descripcion">Descripción</label>
                 <textarea id="descripcion"></textarea><br>
                 <label>Fecha de estreno</label>
                 <input type="date" id="fecha"><br>
                 <label>Duración</label>
-                <input type="number" id="duracion"><br>
+                <input type="number" id="duracion" min="0"><br>
                 <label for="vista">¿Vista?</label>
                 <input type="radio" id="vistaSi" name="vista" value="Si"><label for="vistaSi">Si</label>
-                <input type="radio" id="vistaNo" name="vista" value="No"><label for="vistaNo">No</label>
+                <input type="radio" id="vistaNo" name="vista" value="No" checked><label for="vistaNo">No</label>
 
             </div>
             <div class="caja"><label for="genero">Género</label>
@@ -85,20 +85,20 @@
                     <option>Terror</option>
                     <option>Histórica</option>
                     <option>Infantil</option>
+                    <option>Otro</option>
                 </select><br>
                 <label>Plataforma disponible:</label>
-                <label><input type="checkbox" value="HBO">HBO</label>
-                <label><input type="checkbox" value="Netflix">Netflix</label>
-                <label><input type="checkbox" value="Disney">Disney+</label><br>
-                <label><input type="checkbox" value="Netflix">Amazon Prime</label>
-                <label><input type="checkbox" value="Netflix">YouTube</label>
-                <label><input type="checkbox" value="Netflix">Movistar</label><br>
-                <label><input type="checkbox" value="Netflix">Apple TV+</label><br>
+                <label><input type="checkbox" value="HBO" id="hbo">HBO</label>
+                <label><input type="checkbox" value="Netflix" id="netflix">Netflix</label>
+                <label><input type="checkbox" value="Disney" id="disney">Disney+</label><br>
+                <label><input type="checkbox" value="Amazon" id="amazon">Amazon Prime</label><br>
                 <label>Añadir imagen <input type="file"></label>
             </div>
             
         </form>
-        <button class="btnEliminar">Cancelar</button>
+        <p id="camposrellenos">*Debe rellenar todos los campos</p>
+        <p id="insertado">Insertado correctamente</p>
+        <button class="btnEliminar">Borrar</button>
         <button class="btnModificar">Enviar</button>
     </div>
 
@@ -174,15 +174,13 @@
                     <option>Terror</option>
                     <option>Histórica</option>
                     <option>Infantil</option>
+                    <option>Otro</option>
                 </select><br>
                 <label for="checkbok">Plataforma disponible:</label>
                 <label><input type="checkbox" value="HBO" checked>HBO</label>
                 <label><input type="checkbox" value="Netflix">Netflix</label>
                 <label><input type="checkbox" value="Disney">Disney+</label><br>
                 <label><input type="checkbox" value="Amazon">Amazon Prime</label>
-                <label><input type="checkbox" value="Youtube">YouTube</label>
-                <label><input type="checkbox" value="Movistar">Movistar</label><br>
-                <label><input type="checkbox" value="Apple">Apple TV+</label><br>
                 <label>Añadir imagen <input type="file"></label>
             </div>
         </form>
@@ -196,7 +194,7 @@
         <form>
             <label for="vista">¿Vista?</label>
             <input type="radio" id="vistaSi" name="vista" value="Si"><label for="vistaSi">Si</label>
-            <input type="radio" id="vistaNo" name="vista" value="No"><label for="vistaNo">No</label>
+            <input type="radio" id="vistaNo" name="vista" value="No" checked><label for="vistaNo">No</label>
 
             <label id="genero">Género</label>
                 <select>
@@ -206,6 +204,7 @@
                     <option>Terror</option>
                     <option>Histórica</option>
                     <option>Infantil</option>
+                    <option>Otro</option>
                 </select>
 
                 <button class="btnModificar">Enviar</button>

@@ -79,6 +79,7 @@ class Controlador {
 	pulsarNavNuevo() {
 		this.ocultarVistas()
 		this.vistaNueva.mostrar(true)
+		this.vistaNueva.pulsarBorrar()
 	}
 
 	/**

@@ -1,4 +1,5 @@
 "use strict" //activo modo estricto
+import { Pelicula } from './pelicula.js'
 import {Vista} from './vista.js'
 /**
  * Clase VistaNueva que muestra el formulario para una nueva pelicula
@@ -16,45 +17,107 @@ export class VistaNueva extends Vista {
           this.controlador = controlador
           this.div=document.getElementById('nueva')
 
-          this.cancelar=this.div.getElementsByTagName('button')[0]
-          this.cancelar.onclick = this.pulsarCancelar.bind(this)
+          this.borrar=this.div.getElementsByTagName('button')[0]
+          this.borrar.onclick = this.pulsarBorrar.bind(this)
 
           this.aceptar=this.div.getElementsByTagName('button')[1]
           this.aceptar.onclick = this.pulsarAceptar.bind(this)
+
+          this.netflix=document.getElementById('netflix')
+          this.netflix.onclick=this.anadirPlataforma.bind(this,'Netflix')
+
+          this.hbo=document.getElementById('hbo')
+          this.hbo.onclick=this.anadirPlataforma.bind(this, 'Hbo')
+
+          this.disney=document.getElementById('disney')
+          this.disney.onclick=this.anadirPlataforma.bind(this, 'Disney')
+
+          this.amazon=document.getElementById('amazon')
+          this.amazon.onclick=this.anadirPlataforma.bind(this,'Amazon')
+
+          this.plataformas=new Set()
 	}
+
      /**
-      * Método para cuando damos al boton cancelar
+      * Método para cuando damos al boton borrar que limpia el formulario
       */
-     pulsarCancelar() {
-          this.controlador.pulsarCancelar()
+     pulsarBorrar() {
+          document.getElementById('nombre').value=''
+          document.getElementById('descripcion').value=''
+          document.getElementById('fecha').value=''
+          document.getElementById('duracion').value=''
+          this.netflix.checked=false
+          this.hbo.checked=false
+          this.disney.checked=false
+          this.amazon.checked=false
+          this.plataformas.clear()
+          let error=document.getElementById('camposrellenos')
+          error.style.display='none'
+          let insertado=document.getElementById('insertado')
+          insertado.style.display='none'
      }
 
      /**
       * Método para cuando damos al boton aceptar
       */
      pulsarAceptar() {
+          let error=document.getElementById('camposrellenos')
+          error.style.display='none'
+          let insertado=document.getElementById('insertado')
+          insertado.style.display='none'
+
           let nombre=document.getElementById('nombre').value
-          console.log('nombre: ',nombre)
 
           let descripcion=document.getElementById('descripcion').value
-          console.log('descripcion: ',descripcion)
-
+          
           let fecha=document.getElementById('fecha').value
-          console.log('fecha: ',fecha)
-
+          
           let duracion=document.getElementById('duracion').value
-          console.log('duracion: ',duracion)
 
+          let vista=null
           if(document.getElementById('vistaSi').checked){
-               let vista=document.getElementById('vistaSi').value
-               console.log('vista: ',vista)
+               vista=true
+          }
+          if(document.getElementById('vistaNo').checked){
+               vista=false
+          }
+
+          let genero=document.getElementById('genero')
+          let opcion=genero.options[genero.selectedIndex].value
+          
+          if(nombre=='' || descripcion=='' || fecha=='' || duracion==''){
+               error.style.display='block'
           }
           else{
-               let vista=document.getElementById('vistaNo').value
-               console.log('vista: ',vista)
+               let pelicula= new Pelicula()
+               pelicula.setNombre(nombre)
+               pelicula.setDescripcion(descripcion)
+               pelicula.setFecha(fecha)
+               pelicula.setDuracion(duracion)
+               pelicula.setVista(vista)
+               pelicula.setGenero(opcion)
+               pelicula.setPlataforma(this.plataformas)
+
+               console.log(pelicula)
+               this.pulsarBorrar()
+               insertado.style.display='block'
           }
 
-          let genero=document.getElementsByTagName('select')
-          console.log('genero: ',genero)
+          
      }
+
+     /**
+      * Método que se ejecuta al pulsar el checkbox de Netflix, eliminandolo del Set si existe o añadiendolo
+      */
+     anadirPlataforma(elemento){
+          if(this.plataformas.has(elemento)){
+               this.plataformas.delete(elemento)
+          }
+          else{
+               this.plataformas.add(elemento)
+          }
+
+          console.log(this.plataformas)
+     }
+
 }

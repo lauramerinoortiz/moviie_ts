@@ -28,6 +28,10 @@ h1{
     margin: 40px 0 60px 0;
 }
 
+label{
+    display: inline-block;
+}
+
 /*NAV*/
 header nav{
     background-color: white;
@@ -205,6 +209,23 @@ header nav ul li:first-child{
 .caja{
    width: 49%;
    display: inline-block;
+}
+
+@media (max-width:850px) {
+    .caja{
+        width: auto;
+        display: block;
+    }
+}
+
+#camposrellenos{
+    display: none;
+    color: white;
+}
+
+#insertado{
+    display: none;
+    color: white;
 }
 
 /*ELIMINAR PELICULA*/
