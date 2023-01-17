@@ -19,7 +19,7 @@ export class VistaNav{
 		
 		this.liListado.onclick = this.pulsarListado.bind(this)
 		this.liNuevo.onclick = this.pulsarNuevo.bind(this)
-		this.liLogo.onclick = this.pulsarLogo.bind(this)
+		this.liLogo.onclick = this.pulsarListado.bind(this)
 		this.liBuscar.onclick = this.pulsarBuscar.bind(this)
 	}
 
@@ -27,13 +27,9 @@ export class VistaNav{
 	 *	Atención a la pulsación sobre el enlace del listado
 	 */
 	pulsarListado() {
-		this.controlador.pulsarNavListado()
+		this.controlador.pulsarListado()
 	}
 
-	pulsarLogo() {
-		let lista=this.controlador.pulsarLogo()
-		console.log(lista)
-	}
 
 	/**
 	 *	Atención a la pulsación sobre el enlace de nuevo

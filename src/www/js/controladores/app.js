@@ -123,6 +123,10 @@ class Controlador {
         this.vistaModificar.mostrar(true)
     }
 
+	/**
+	 * Método para añadir una pelicula a la base de datos
+	 * @param {Object} pelicula 
+	 */
 	nuevaPelicula(pelicula){
 		this.modelo.nuevaPelicula( pelicula)
 	}
@@ -135,9 +139,13 @@ class Controlador {
 		return this.modelo
 	}
 
-	pulsarLogo(){
-		let lista=this.modelo.pulsarLogo()
-		return lista
+	/**
+	 * Método que coge el listado y lo lleva a la vista para que lo muestre
+	 */
+	pulsarListado(){
+		let lista=this.modelo.pulsarListado()
+		this.vistaListado.mostrarListado(lista)
+		this.pulsarNavListado()
 	}
 }
 const app= new Controlador()

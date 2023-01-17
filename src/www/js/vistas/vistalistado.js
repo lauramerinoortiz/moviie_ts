@@ -16,24 +16,56 @@ export class VistaListado extends Vista {
           this.controlador = controlador
 
           this.listado=document.getElementById('listado')
-          this.pelicula1=document.getElementById('peli1')
-          this.pelicula2=document.getElementById('peli2')
-          this.pelicula3=document.getElementById('peli3')
-          this.pelicula4=document.getElementById('peli4')
-          this.pelicula5=document.getElementById('peli5')
-          this.pelicula6=document.getElementById('peli6')
+          this.peliculas
+          this.anadirClick()
 
-          this.pelicula1.onclick=this.pulsarPelicula.bind(this)
-          this.pelicula2.onclick=this.pulsarPelicula.bind(this)
-          this.pelicula3.onclick=this.pulsarPelicula.bind(this)
-          this.pelicula4.onclick=this.pulsarPelicula.bind(this)
-          this.pelicula5.onclick=this.pulsarPelicula.bind(this)
-          this.pelicula6.onclick=this.pulsarPelicula.bind(this)
 	}
+
+     anadirClick(){
+          this.peliculas=document.getElementsByClassName('pelicula')
+          for(let peli of this.peliculas){
+               peli.onclick=this.pulsarPelicula.bind(this)
+          }
+     }
+
      /**
       * Método para cuando damos click a una pelicula
       */
      pulsarPelicula(){
           this.controlador.pulsarPelicula()
+     }
+
+     /**
+      * Método que saca el listado de peliculas guardadas en la base de datos
+      * @param {Array} lista 
+      */
+     mostrarListado(lista){
+          this.listado.innerHTML = ""        //vaciamos el div
+          console.log(lista)
+
+          let cabezado=document.createElement('h1')
+          cabezado.appendChild(document.createTextNode('Listado de preguntas'))
+          this.listado.appendChild(cabezado)
+
+          for(let item of lista){
+               let div=document.createElement('div')
+               div.className='pelicula'
+               if(item.imagen!=''){
+                    div.style.backgroundImage="url('"+item.imagen+"')"
+               }
+               else{
+                    div.style.backgroundImage="url('assets/recursos/fondo.png')"
+               }
+
+               let oculto=document.createElement('div')
+               oculto.className='oculto'
+               div.appendChild(oculto)
+
+               let titulo=document.createElement('h2')
+               div.appendChild(titulo)
+               titulo.appendChild(document.createTextNode(item.nombre))
+               this.listado.appendChild(div)
+          }
+          this.anadirClick()       //añadimos a todas las peliculas el onclick que abre sus datos
      }
 }

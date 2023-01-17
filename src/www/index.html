@@ -32,31 +32,9 @@
 	<!-- DIV DE INICIO CON LISTADO -->
 	<div id="inicio">
         <div id="listado">
-        <h1>Listado de películas</h1>
-		<div class="pelicula" id="peli1">
-			<div class="oculto"></div>
-			<h2>Elite</h2>
-		</div>
-		<div class="pelicula" id="peli2">
-			<div class="oculto"></div>
-			<h2>Las ventajas de ser un marginado</h2>
-		</div>
-		<div class="pelicula" id="peli3">
-			<div class="oculto"></div>
-			<h2>Mujercitas</h2>
-		</div>
-		<div class="pelicula" id="peli4">
-			<div class="oculto"></div>
-			<h2>Shrek</h2>
-		</div>
-		<div class="pelicula" id="peli5">
-			<div class="oculto"></div>
-			<h2>Wakanda</h2>
-		</div>
-		<div class="pelicula" id="peli6">
-			<div class="oculto"></div>
-			<h2>Titanic</h2>
-		</div>
+        <h1><br>Bienvenido/a!</h1><br>
+        <h1>¿Qué quieres hacer hoy?</h1>
+
     </div>
 	</div>
 
@@ -64,13 +42,13 @@
     <div id="nueva">
         <h1>Nueva película</h1>
         <form>
-            <div class="caja"><label for="nombre">Nombre</label>
+            <div class="caja"><label for="nombre">Nombre*</label>
                 <input type="text" id="nombre"><br>
-                <label for="descripcion">Descripción</label>
+                <label for="descripcion">Descripción*</label>
                 <textarea id="descripcion"></textarea><br>
-                <label>Fecha de estreno</label>
+                <label>Fecha de estreno*</label>
                 <input type="date" id="fecha"><br>
-                <label>Duración</label>
+                <label>Duración*</label>
                 <input type="number" id="duracion" min="0"><br>
                 <label for="vista">¿Vista?</label>
                 <input type="radio" id="vistaSi" name="vista" value="Si"><label for="vistaSi">Si</label>
@@ -92,11 +70,11 @@
                 <label><input type="checkbox" value="Netflix" id="netflix">Netflix</label>
                 <label><input type="checkbox" value="Disney" id="disney">Disney+</label><br>
                 <label><input type="checkbox" value="Amazon" id="amazon">Amazon Prime</label><br>
-                <label>Añadir imagen <input type="file"></label>
+                <label for="imagen">URL de imagen <input type="text" id="imagen"></label>
             </div>
             
         </form>
-        <p id="camposrellenos">*Debe rellenar todos los campos</p>
+        <p id="camposrellenos">*Debe rellenar todos los campos con asterico</p>
         <p id="insertado">Insertado correctamente</p>
         <button class="btnEliminar">Borrar</button>
         <button class="btnModificar">Enviar</button>

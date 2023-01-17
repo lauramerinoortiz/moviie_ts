@@ -10,11 +10,19 @@ export class Modelo{
 		this.idb=new Idb()
 	}
 
+	/**
+	 * Método que le pasa al idb un objeto de pelicula para que lo añana a la base de datos
+	 * @param {Object} pelicula 
+	 */
 	nuevaPelicula( pelicula){
 		this.idb.nuevaPelicula(pelicula)
 	}
 
-	pulsarLogo(){
+	/**
+	 * Método que pide el idb el listado de registros
+	 * @returns lista que es un array
+	 */
+	pulsarListado(){
 		let lista=this.idb.lista
 		return lista
 	}

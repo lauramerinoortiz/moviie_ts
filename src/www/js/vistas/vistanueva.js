@@ -17,6 +17,12 @@ export class VistaNueva extends Vista {
           this.controlador = controlador
           this.div=document.getElementById('nueva')
 
+          this.nombre=document.getElementById('nombre')
+          this.descripcion=document.getElementById('descripcion')
+          this.fecha=document.getElementById('fecha')
+          this.duracion=document.getElementById('duracion')
+          this.imagen=document.getElementById('imagen')
+
           this.borrar=this.div.getElementsByTagName('button')[0]
           this.borrar.onclick = this.pulsarBorrar.bind(this)
 
@@ -42,10 +48,11 @@ export class VistaNueva extends Vista {
       * Método para cuando damos al boton borrar que limpia el formulario
       */
      pulsarBorrar() {
-          document.getElementById('nombre').value=''
-          document.getElementById('descripcion').value=''
-          document.getElementById('fecha').value=''
-          document.getElementById('duracion').value=''
+          this.nombre.value=''
+          this.descripcion.value=''
+          this.fecha.value=''
+          this.duracion.value=''
+          this.imagen.value=''
           this.netflix.checked=false
           this.hbo.checked=false
           this.disney.checked=false
@@ -55,6 +62,10 @@ export class VistaNueva extends Vista {
           error.style.display='none'
           let insertado=document.getElementById('insertado')
           insertado.style.display='none'
+          this.nombre.style.borderColor="#808080"
+          this.descripcion.style.borderColor="#808080"
+          this.fecha.style.borderColor="#808080"
+          this.duracion.style.borderColor="#808080"
      }
 
      /**
@@ -65,14 +76,20 @@ export class VistaNueva extends Vista {
           error.style.display='none'
           let insertado=document.getElementById('insertado')
           insertado.style.display='none'
+          this.nombre.style.borderColor="#808080"
+          this.descripcion.style.borderColor="#808080"
+          this.fecha.style.borderColor="#808080"
+          this.duracion.style.borderColor="#808080"
 
-          let nombre=document.getElementById('nombre').value
+          let nombre=this.nombre.value
 
-          let descripcion=document.getElementById('descripcion').value
+          let descripcion=this.descripcion.value
           
-          let fecha=document.getElementById('fecha').value
+          let fecha=this.fecha.value
           
-          let duracion=document.getElementById('duracion').value
+          let duracion=this.duracion.value
+
+          let imagen=this.imagen.value
 
           let vista=null
           if(document.getElementById('vistaSi').checked){
@@ -85,8 +102,21 @@ export class VistaNueva extends Vista {
           let genero=document.getElementById('genero')
           let opcion=genero.options[genero.selectedIndex].value
           
-          if(nombre=='' || descripcion=='' || fecha=='' || duracion==''){
+          if(nombre==''){
                error.style.display='block'
+               this.nombre.style.borderColor="red"
+          }
+          else if(descripcion==''){
+               error.style.display='block'
+               this.descripcion.style.borderColor="red"
+          }
+          else if(fecha==''){
+               error.style.display='block'
+               this.fecha.style.borderColor="red"
+          }
+          else if(duracion==''){
+               error.style.display='block'
+               this.duracion.style.borderColor="red"
           }
           else{
                let pelicula= new Pelicula()
@@ -97,6 +127,7 @@ export class VistaNueva extends Vista {
                pelicula.setVista(vista)
                pelicula.setGenero(opcion)
                pelicula.setPlataforma(this.plataformas)
+               pelicula.setImagen(imagen)
                
                this.controlador.nuevaPelicula(pelicula)
                this.pulsarBorrar()
