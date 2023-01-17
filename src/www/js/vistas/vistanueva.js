@@ -96,9 +96,13 @@ export class VistaNueva extends Vista {
                pelicula.setDuracion(duracion)
                pelicula.setVista(vista)
                pelicula.setGenero(opcion)
+
+               console.log(this.plataformas)
                pelicula.setPlataforma(this.plataformas)
 
+               console.log('plataformas de pelicula ',pelicula.plataforma)
                console.log(pelicula)
+               this.controlador.nuevaPelicula(pelicula)
                this.pulsarBorrar()
                insertado.style.display='block'
           }
@@ -106,7 +110,7 @@ export class VistaNueva extends Vista {
      }
 
      /**
-      * Método que se ejecuta al pulsar el checkbox de Netflix, eliminandolo del Set si existe o añadiendolo
+      * Método que se ejecuta al pulsar cualquier checkbox, eliminandolo del Set si existe o añadiendolo
       */
      anadirPlataforma(elemento){
           if(this.plataformas.has(elemento)){

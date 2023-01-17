@@ -1,11 +1,12 @@
 "use strict" //activo modo estricto
 
+
 export class Idb{
     constructor(){
-
+        this.conexion=null
     }
 
-    insertar(){
-        
+    nuevaPelicula( pelicula){
+        console.log(pelicula)
     }
 }

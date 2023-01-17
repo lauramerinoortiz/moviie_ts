@@ -7,6 +7,7 @@ import {VistaDatos} from '../vistas/vistadatos.js'
 import {VistaEliminar} from '../vistas/vistaeliminar.js'
 import {VistaModificar} from '../vistas/vistamodificar.js'
 import {VistaBuscar} from '../vistas/vistabuscar.js'
+
 /**
  * Clase Controlador que administra las vistas
  */
@@ -71,6 +72,7 @@ class Controlador {
 	pulsarNavListado() {
 		this.ocultarVistas()
 		this.vistaListado.mostrar(true)
+		this.vistaNueva.pulsarBorrar()
 	}
 
     /**
@@ -120,6 +122,10 @@ class Controlador {
         this.ocultarVistas()
         this.vistaModificar.mostrar(true)
     }
+
+	nuevaPelicula(pelicula){
+		this.modelo.nuevaPelicula( pelicula)
+	}
 
 	/**
 	 * Método getModelo, devuelve el modelo de la aplicación

@@ -8,7 +8,7 @@ export class Pelicula{
         this.duracion=0               //int
         this.vista=false          //boolean
         this.genero=''         //select
-        this.plataforma=[]             //checkbox
+        this.plataforma=new Set()            //checkbox
         this.imagen=''         //imagen
     }
 
