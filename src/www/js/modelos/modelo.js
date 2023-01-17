@@ -13,4 +13,9 @@ export class Modelo{
 	nuevaPelicula( pelicula){
 		this.idb.nuevaPelicula(pelicula)
 	}
+
+	pulsarLogo(){
+		let lista=this.idb.lista
+		return lista
+	}
 }

@@ -134,6 +134,11 @@ class Controlador {
 	getModelo() {
 		return this.modelo
 	}
+
+	pulsarLogo(){
+		let lista=this.modelo.pulsarLogo()
+		return lista
+	}
 }
 const app= new Controlador()
 

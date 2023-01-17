@@ -37,7 +37,11 @@ export class Pelicula{
     }
 
     setPlataforma(plataforma){
-        this.plataforma=plataforma
+        let clon = new Set()
+        for(let item of plataforma){
+            clon.add(item)
+        }
+        this.plataforma=clon
     }
 
     setImagen(imagen){

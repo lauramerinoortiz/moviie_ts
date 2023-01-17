@@ -96,12 +96,8 @@ export class VistaNueva extends Vista {
                pelicula.setDuracion(duracion)
                pelicula.setVista(vista)
                pelicula.setGenero(opcion)
-
-               console.log(this.plataformas)
                pelicula.setPlataforma(this.plataformas)
-
-               console.log('plataformas de pelicula ',pelicula.plataforma)
-               console.log(pelicula)
+               
                this.controlador.nuevaPelicula(pelicula)
                this.pulsarBorrar()
                insertado.style.display='block'
