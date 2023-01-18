@@ -58,11 +58,12 @@
             <div class="caja"><label for="genero">Género</label>
                 <select id="genero">
                     <option>Drama</option>
+                    <option>Romántica</option>
                     <option>Comedia</option>
                     <option>Misterio</option>
                     <option>Terror</option>
                     <option>Histórica</option>
-                    <option>Infantil</option>
+                    <option>Adolescente</option>
                     <option>Otro</option>
                 </select><br>
                 <label>Plataforma disponible:</label>
@@ -146,12 +147,13 @@
             </div>
             <div class="caja"><label for="generoEditar">Género</label>
                 <select id="generoEditar">
-                    <option selected>Drama</option>
+                    <option>Drama</option>
+                    <option>Romántica</option>
                     <option>Comedia</option>
                     <option>Misterio</option>
                     <option>Terror</option>
                     <option>Histórica</option>
-                    <option>Infantil</option>
+                    <option>Adolescente</option>
                     <option>Otro</option>
                 </select><br>
                 <label for="checkbok">Plataforma disponible:</label>
@@ -171,22 +173,23 @@
 	    <h1>Añade estado y género</h1>
         <form>
             <label for="vista">¿Vista?</label>
-            <input type="radio" id="vistaSi" name="vista" value="Si"><label for="vistaSi">Si</label>
-            <input type="radio" id="vistaNo" name="vista" value="No" checked><label for="vistaNo">No</label>
+            <input type="radio" id="vistaSiBuscar" name="vista" value="Si"><label for="vistaSi">Si</label>
+            <input type="radio" id="vistaNoBuscar" name="vista" value="No" checked><label for="vistaNo">No</label>
 
-            <label id="genero">Género</label>
-                <select>
+            <label for="generoBuscar">Género</label>
+                <select id="generoBuscar">
                     <option>Drama</option>
+                    <option>Romántica</option>
                     <option>Comedia</option>
                     <option>Misterio</option>
                     <option>Terror</option>
                     <option>Histórica</option>
-                    <option>Infantil</option>
+                    <option>Adolescente</option>
                     <option>Otro</option>
                 </select>
-
-                <button class="btnModificar">Enviar</button>
         </form>
+        <button class="btnModificar">Enviar</button>
+        <div id="buscadas"></div>
     </div>
 
     <!-- FOOTER -->

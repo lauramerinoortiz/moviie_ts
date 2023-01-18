@@ -50,9 +50,7 @@ class Controlador {
 		
         this.ocultarVistas()
 		this.vistaListado.mostrar(true)
-		
 	}
-
 
 	/**
 	 * Método que oculta todas las vistas
@@ -146,6 +144,24 @@ class Controlador {
 		let lista=this.modelo.pulsarListado()
 		this.vistaListado.mostrarListado(lista)
 		this.pulsarNavListado()
+	}
+
+	/**
+	 * Método que llama a la base de datos a que busque
+	 * @param {Boolean} vista 
+	 * @param {String} genero 
+	 */
+	pulsarBuscar(vista, genero){
+		let lista=this.modelo.buscar(vista, genero, this.mandarLista.bind(this))
+		return lista
+	}
+
+	/**
+	 * Método que manda a la vista la lista de elementos de la bsuqueda
+	 * @param {Array} lista 
+	 */
+	mandarLista(lista){
+		this.vistaBuscar.listar(lista)
 	}
 }
 const app= new Controlador()

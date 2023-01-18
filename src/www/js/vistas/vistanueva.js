@@ -53,6 +53,9 @@ export class VistaNueva extends Vista {
           this.fecha.value=''
           this.duracion.value=''
           this.imagen.value=''
+          document.getElementsByTagName('select')[0].value='Drama'
+  
+          
           this.netflix.checked=false
           this.hbo.checked=false
           this.disney.checked=false

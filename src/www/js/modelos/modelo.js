@@ -26,4 +26,16 @@ export class Modelo{
 		let lista=this.idb.lista
 		return lista
 	}
+
+	/**
+	 * Método que manda al ibd unos valos y busca en la bbdd y devuelve el listado que coincide
+	 * @param {Boolean} vista 
+	 * @param {String} genero 
+	 * @param {Method} callback 
+	 * @returns 
+	 */
+	buscar(vista, genero, callback){
+		let lista=this.idb.buscar(vista, genero, callback)
+		return lista
+	}
 }

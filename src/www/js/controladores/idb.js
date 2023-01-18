@@ -28,7 +28,8 @@ export class Idb{
 		peticion.onupgradeneeded =(event) =>{
 			this.bd=event.target.result
 			const objectStore= this.bd.createObjectStore('Tabla', {keyPath :'nombre'})		//Objeto para guardar los datos
-		}
+            
+        }
 		peticion.onerror=function(){		//si va mal
 			console.log('Fallo al cargar la base de datos.')
 		}
@@ -57,5 +58,24 @@ export class Idb{
         peticion.onerror=function(){		//si va mal
             console.log('Fallo al cargar la base de datos.')
         }
+    }
+
+    buscar(vista, genero, callback){
+        const objectStore = this.bd.transaction("Tabla").objectStore("Tabla");
+		this.listaResultados = []
+		
+		const cursor1 = objectStore.openCursor()
+		cursor1.onsuccess = (evento) => {
+			const cursor = evento.target.result;
+			if (cursor) {
+				let pelicula = cursor.value
+				if (pelicula.vista == vista && pelicula.genero == genero)
+					this.listaResultados.push(pelicula)
+				    cursor.continue()
+			} 
+            else {
+				callback(this.listaResultados)
+			}
+		}  
     }
 }

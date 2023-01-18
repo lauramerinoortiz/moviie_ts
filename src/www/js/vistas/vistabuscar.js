@@ -19,13 +19,76 @@ export class VistaBuscar extends Vista {
 
           this.aceptar=this.div.getElementsByTagName('button')[0]
           this.aceptar.onclick = this.pulsarAceptar.bind(this)
-
 	}
 
      /**
       * Método para cuando pulsamos el boton aceptar
       */
      pulsarAceptar() {
-          this.controlador.pulsarCancelar()
+          let vista
+          if(document.getElementById('vistaSiBuscar').checked){
+               vista=true
+          }
+          if(document.getElementById('vistaNoBuscar').checked){
+               vista=false
+          }
+
+          let genero=document.getElementById('generoBuscar')
+          let opcion=genero.options[genero.selectedIndex].value
+          let lista=this.controlador.pulsarBuscar(vista, opcion)
+     }
+
+     /**
+      * Método que saca las peliculas según la lista de resultados que recibe
+      * @param {Array} lista 
+      */
+     listar(lista){
+          let listado=document.getElementById('buscadas')
+          listado.innerHTML = ""        //vaciamos el div
+          if(lista==''){      //si la lista viene vacia porque no hay coincidencias
+               let vacio=document.createElement('h2')
+               vacio.appendChild(document.createTextNode('No hay datos que coincidan'))
+               listado.appendChild(vacio)
+          }
+          else{
+               for(let item of lista){
+                    let div=document.createElement('div')
+                    div.className='pelicula'
+                    if(item.imagen!=''){
+                         div.style.backgroundImage="url('"+item.imagen+"')"
+                    }
+                    else{
+                         div.style.backgroundImage="url('assets/recursos/fondo.png')"
+                    }
+
+                    let oculto=document.createElement('div')
+                    oculto.className='oculto'
+                    div.appendChild(oculto)
+
+                    let titulo=document.createElement('h2')
+                    div.appendChild(titulo)
+                    titulo.appendChild(document.createTextNode(item.nombre))
+                    listado.appendChild(div)
+               }
+               this.anadirClick()
+          }
+     }
+
+     /**
+      * Método para añadir el método onclick a cada pelicula
+      */
+     anadirClick(){
+          this.div=document.getElementById('buscadas')
+          let listado=this.div.getElementsByClassName('pelicula')
+          for(let peli of listado){
+               peli.onclick=this.pulsarPelicula.bind(this)
+          }
+     }
+
+     /**
+      * Método para cuando damos click a una pelicula
+      */
+     pulsarPelicula(){
+          this.controlador.pulsarPelicula()
      }
 }

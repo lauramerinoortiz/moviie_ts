@@ -20,6 +20,7 @@ body{
     text-align: center;
     position: relative;
     font-family:"Century Gothic";
+    min-height: 700px;
 }
 
 h1{
@@ -80,7 +81,7 @@ header nav ul li:first-child{
 }
 
 /*LISTADO DE PELICULAS*/
-#listado{
+#listado, #buscadas{
     width: 80%;
     height: auto;
     display: flex !important;
@@ -89,6 +90,7 @@ header nav ul li:first-child{
     margin: auto;
     gap: 30px;
 }
+
 #listado h1, #nueva h1, #datos h1, #eliminar h1, #modificar h1{
     width: 100%;
 }
@@ -239,6 +241,10 @@ header nav ul li:first-child{
 
 #genero{
     margin-left: 60px;
+}
+
+#buscadas{
+    margin-top: 50px;
 }
 
 /*FOOTER*/
