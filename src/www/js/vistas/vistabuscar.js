@@ -43,12 +43,12 @@ export class VistaBuscar extends Vista {
       * @param {Array} lista 
       */
      listar(lista){
-          let listado=document.getElementById('buscadas')
-          listado.innerHTML = ""        //vaciamos el div
+          let resul=document.getElementById('resul')
+          resul.innerHTML = ""        //vaciamos el div
           if(lista==''){      //si la lista viene vacia porque no hay coincidencias
                let vacio=document.createElement('h2')
                vacio.appendChild(document.createTextNode('No hay datos que coincidan'))
-               listado.appendChild(vacio)
+               resul.appendChild(vacio)
           }
           else{
                for(let item of lista){
@@ -68,7 +68,7 @@ export class VistaBuscar extends Vista {
                     let titulo=document.createElement('h2')
                     div.appendChild(titulo)
                     titulo.appendChild(document.createTextNode(item.nombre))
-                    listado.appendChild(div)
+                    resul.appendChild(div)
                }
                this.anadirClick()
           }
@@ -78,8 +78,8 @@ export class VistaBuscar extends Vista {
       * Método para añadir el método onclick a cada pelicula
       */
      anadirClick(){
-          this.div=document.getElementById('buscadas')
-          let listado=this.div.getElementsByClassName('pelicula')
+          let div=document.getElementById('resul')
+          let listado=div.getElementsByClassName('pelicula')
           for(let peli of listado){
                peli.onclick=this.pulsarPelicula.bind(this)
           }

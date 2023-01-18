@@ -93,10 +93,20 @@ class Controlador {
     /**
      * Método cuando pulsamos una pelicula
      */
-    pulsarPelicula(){
-        this.ocultarVistas()
-		this.vistaDatos.mostrar(true)
+    pulsarPelicula(nombre){
+		this.modelo.buscarNombre(nombre, this.mostrarDatos.bind(this))
     }
+	
+	/**
+	 * Método que manda la pelicula a la vista
+	 * @param {Object} pelicula 
+	 */
+	mostrarDatos(pelicula){
+		this.ocultarVistas()
+		this.vistaDatos.mostrar(true)
+		console.log('app pelicula: '+pelicula)
+		this.vistaDatos.mostrarDatos(pelicula)
+	}
 
     /**
      * Método cuando pulsamos un boton cancelar

@@ -38,4 +38,12 @@ export class Modelo{
 		let lista=this.idb.buscar(vista, genero, callback)
 		return lista
 	}
+
+	/**
+	 * Método que manda al idb un nombre para buscar sus datos en la bbdd
+	 * @param {String} nombre 
+	 */
+	buscarNombre(nombre, callback){
+		this.idb.buscarNombre(nombre, callback)
+	}
 }

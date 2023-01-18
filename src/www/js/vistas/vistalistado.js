@@ -20,21 +20,24 @@ export class VistaListado extends Vista {
           this.anadirClick()
 
 	}
+
      /**
       * Método que añade a cada div de pelicula el onclick al metodo pulsarPelicula del controlador
       */
      anadirClick(){
           this.peliculas=document.getElementsByClassName('pelicula')
           for(let peli of this.peliculas){
-               peli.onclick=this.pulsarPelicula.bind(this)
+               let nombre=peli.lastChild.innerHTML
+               peli.onclick=this.pulsarPelicula.bind(this, nombre)
           }
      }
 
      /**
       * Método para cuando damos click a una pelicula
       */
-     pulsarPelicula(){
-          this.controlador.pulsarPelicula()
+     pulsarPelicula(nombre){
+          console.log(nombre)
+          this.controlador.pulsarPelicula(nombre)
      }
 
      /**

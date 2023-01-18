@@ -23,6 +23,42 @@ export class VistaDatos extends Vista {
           this.modificar.onclick=this.pulsarModificar.bind(this)
 
 	}
+     /**
+      * Método que muestra en la tabla de datos, los datos de la pelicula
+      * @param {Object} pelicula 
+      */
+     mostrarDatos(pelicula){
+          //Buscamos los datos
+          let nombre=document.getElementById("datosNombre")
+          let descripcion=document.getElementById("datosDescripcion")
+          let fecha=document.getElementById("datosFecha")
+          let duracion=document.getElementById("datosDuracion")
+          let plataformas=document.getElementById("datosPlataformas")
+          let genero=document.getElementById("datosGenero")
+          let vista=document.getElementById("datosVista")
+          //Borramos el contenido que pudiera haber anteriormente
+          nombre.innerHTML=''
+          descripcion.innerHTML=''
+          fecha.innerHTML=''
+          duracion.innerHTML=''
+          plataformas.innerHTML=''
+          genero.innerHTML=''
+          vista.innerHTML=''
+          //Metemos los datos de la pelicula
+          nombre.appendChild(document.createTextNode(pelicula.nombre))
+          descripcion.appendChild(document.createTextNode(pelicula.descripcion))
+          fecha.appendChild(document.createTextNode(pelicula.fecha))
+          duracion.appendChild(document.createTextNode(pelicula.duracion))
+          plataformas.appendChild(document.createTextNode(pelicula.plataformas))
+          genero.appendChild(document.createTextNode(pelicula.genero))
+          if(pelicula.vista){
+               vista.appendChild(document.createTextNode('Si'))
+          }
+          else{
+               vista.appendChild(document.createTextNode('No'))
+          }
+          
+     }
 
      /**
       * Método para cuando damos al boton eliminar

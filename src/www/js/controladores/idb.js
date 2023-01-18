@@ -78,4 +78,31 @@ export class Idb{
 			}
 		}  
     }
+    
+    /**
+     * Método que busca en la base de datos y extrae la película según el nombre
+     * @param {String} nombre 
+     * @param {Method} callback 
+     */
+    buscarNombre(nombre, callback){
+        const objectStore = this.bd.transaction("Tabla").objectStore("Tabla");
+		this.result 
+		console.log('nombre a buscar:'+nombre)
+		const cursor1 = objectStore.openCursor()
+		cursor1.onsuccess = (evento) => {
+			const cursor = evento.target.result;
+			if (cursor) {
+				let pelicula = cursor.value
+				if (pelicula.nombre == nombre){
+                    console.log('encontrada'+pelicula.nombre)
+					this.result=pelicula
+                }
+				    cursor.continue()
+			} 
+            else {
+                console.log(this.result)
+				callback(this.result)
+			}
+		}  
+    }
 }

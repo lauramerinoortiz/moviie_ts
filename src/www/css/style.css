@@ -81,7 +81,7 @@ header nav ul li:first-child{
 }
 
 /*LISTADO DE PELICULAS*/
-#listado, #buscadas{
+#listado, #resul{
     width: 80%;
     height: auto;
     display: flex !important;
@@ -243,7 +243,7 @@ header nav ul li:first-child{
     margin-left: 60px;
 }
 
-#buscadas{
+#resul{
     margin-top: 50px;
 }
 
