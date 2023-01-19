@@ -36,7 +36,6 @@ export class VistaListado extends Vista {
       * Método para cuando damos click a una pelicula
       */
      pulsarPelicula(nombre){
-          console.log(nombre)
           this.controlador.pulsarPelicula(nombre)
      }
 
@@ -46,7 +45,6 @@ export class VistaListado extends Vista {
       */
      mostrarListado(lista){
           this.listado.innerHTML = ""        //vaciamos el div
-          console.log(lista)
           if(lista==''){
                let vacio=document.createElement('h2')
                vacio.appendChild(document.createTextNode('No hay datos aún. Dale a "Nueva" ya añade una película.'))

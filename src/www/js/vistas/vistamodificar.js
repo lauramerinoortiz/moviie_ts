@@ -52,31 +52,49 @@ export class VistaModificar extends Vista {
       * Método para cuando damos click a Aceptar
       */
      pulsarAceptar(id) {
+          let error=document.getElementById('camposrellenosEditar')
           console.log(id)
-          //Coger los datos del formulario
-          let peliculaNueva=new Pelicula()
-          peliculaNueva.setNombre(this.nombre.value)
-          peliculaNueva.setDescripcion(this.descripcion.value)
-          peliculaNueva.setFecha(this.fecha.value)
-          peliculaNueva.setDuracion(this.duracion.value)
-          peliculaNueva.setImagen(this.imagen.value)
-          peliculaNueva.setPlataforma(this.plataformas)
-
-          let vista=null
-          if(document.getElementById('vistaSiEditar').checked){
-               vista=true
+          if(this.nombre.value==''){
+               error.style.display='block'
+               this.nombre.style.borderColor="red"
           }
-          if(document.getElementById('vistaNoEditar').checked){
-               vista=false
+          else if(this.descripcion.value==''){
+               error.style.display='block'
+               this.descripcion.style.borderColor="red"
           }
+          else if(this.fecha.value==''){
+               error.style.display='block'
+               this.fecha.style.borderColor="red"
+          }
+          else if(this.duracion.value==''){
+               error.style.display='block'
+               this.duracion.style.borderColor="red"
+          }
+          else{
+               //Coger los datos del formulario
+               let peliculaNueva=new Pelicula()
+               peliculaNueva.setNombre(this.nombre.value)
+               peliculaNueva.setDescripcion(this.descripcion.value)
+               peliculaNueva.setFecha(this.fecha.value)
+               peliculaNueva.setDuracion(this.duracion.value)
+               peliculaNueva.setImagen(this.imagen.value)
+               peliculaNueva.setPlataforma(this.plataformas)
 
-          let genero=document.getElementById('generoEditar')
-          let opcion=genero.options[genero.selectedIndex].value
-          peliculaNueva.setVista(vista)
-          peliculaNueva.setGenero(opcion)
+               let vista=null
+               if(document.getElementById('vistaSiEditar').checked){
+                    vista=true
+               }
+               if(document.getElementById('vistaNoEditar').checked){
+                    vista=false
+               }
 
-          this.controlador.modificarPelicula(id, peliculaNueva)
+               let genero=document.getElementById('generoEditar')
+               let opcion=genero.options[genero.selectedIndex].value
+               peliculaNueva.setVista(vista)
+               peliculaNueva.setGenero(opcion)
 
+               this.controlador.modificarPelicula(id, peliculaNueva)
+          }
      }
 
      /**
@@ -118,7 +136,6 @@ export class VistaModificar extends Vista {
           for(let item of pelicula.plataforma){
                this.plataformas.add(item)
           }
-          console.log(this.plataformas)
           document.getElementById('generoEditar').value=pelicula.genero
           if(this.plataformas.has('Netflix')){
                this.netflix.checked=true
@@ -150,6 +167,5 @@ export class VistaModificar extends Vista {
                this.plataformas.add(elemento)
           }
 
-          console.log(this.plataformas)
      }
 }

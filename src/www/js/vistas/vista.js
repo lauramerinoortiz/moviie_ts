@@ -18,6 +18,7 @@ export class Vista{
 	mostrar(ver){
 		if(ver){
 			this.div.style.display='block'
+			console.log('mostrando ', this.div)
 		}
 		else{
 			this.div.style.display='none'

@@ -22,7 +22,6 @@ export class Idb{
 			peticion.onsuccess=(event)=>{
                 console.log('Base de datos cargada')
 				this.lista=event.target.result
-                console.log(this.lista)
 			}
 		}
 		peticion.onupgradeneeded =(event) =>{
@@ -55,6 +54,7 @@ export class Idb{
 		const peticion = objectStore.getAll()
 		peticion.onsuccess=(event)=>{
             this.lista=event.target.result
+            console.log(this.lista)
         }
         peticion.onerror=function(){		//si va mal
             console.log('Fallo al cargar la base de datos.')
@@ -94,20 +94,17 @@ export class Idb{
     buscarNombre(nombre, callback){
         const objectStore = this.bd.transaction("Tabla").objectStore("Tabla");
 		this.result 
-		console.log('nombre a buscar:'+nombre)
 		const cursor1 = objectStore.openCursor()
 		cursor1.onsuccess = (evento) => {
 			const cursor = evento.target.result;
 			if (cursor) {
 				let pelicula = cursor.value
 				if (pelicula.nombre == nombre){
-                    console.log('encontrada'+pelicula.nombre)
 					this.result=pelicula
                 }
 				    cursor.continue()
 			} 
             else {
-                console.log(this.result)
 				callback(this.result)
 			}
 		}  
@@ -140,8 +137,10 @@ export class Idb{
             data.imagen=pelicula.imagen
 
             const peticion2 = objectStore.put(data)
+            this.listadoPeliculas()
             peticion2.onerror =(event) =>{
                 console.log('No se pudo actualizar')
+                
                 callback()
             }
             peticion2.onsuccess =(event) => {

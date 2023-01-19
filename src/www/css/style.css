@@ -213,12 +213,7 @@ header nav ul li:first-child{
    display: inline-block;
 }
 
-@media (max-width:850px) {
-    .caja{
-        width: auto;
-        display: block;
-    }
-}
+
 
 #camposrellenos, #camposrellenosEditar{
     display: none;
@@ -249,7 +244,7 @@ header nav ul li:first-child{
 
 /*FOOTER*/
 footer{
-    height: 40px;
+    min-height: 40px;
     background-color: white;
     margin-top: 100px;
     padding: 30px;
@@ -263,5 +258,46 @@ footer p{
 
 footer img{
     float: right;
-    height: 100%;
+    height: 50px;
+}
+
+/*Tablet*/
+@media (max-width:850px) {
+    .caja{
+        width: auto;
+        display: block;
+    }
+
+    footer img, p{
+        float: none !important;
+    }
+
+    footer{
+        text-align: center;
+    }
+
+    footer img{
+        margin-top: 15px;
+    }
+}
+
+/*Moviles*/
+@media (max-width:450px) {
+    header nav ul li{
+        font-size: 0.8em;
+    }
+
+    #li1{
+        padding-left:10px;
+    }
+
+    #icono{
+        height: 35px;
+    }
+
+    #li1 img{
+        height: 85px;
+    }
+
+    
 }

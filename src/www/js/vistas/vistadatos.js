@@ -49,7 +49,6 @@ export class VistaDatos extends Vista {
           descripcion.appendChild(document.createTextNode(pelicula.descripcion))
           fecha.appendChild(document.createTextNode(pelicula.fecha))
           duracion.appendChild(document.createTextNode(pelicula.duracion))
-          console.log(pelicula.plataforma)
           let plat=''
           for(let item of pelicula.plataforma){
                plat+=item+'; '

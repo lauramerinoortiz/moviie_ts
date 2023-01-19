@@ -104,7 +104,6 @@ class Controlador {
 	mostrarDatos(pelicula){
 		this.ocultarVistas()
 		this.vistaDatos.mostrar(true)
-		console.log('app pelicula: '+pelicula)
 		this.vistaModificar.mostrarDatos(pelicula)
 		this.vistaDatos.mostrarDatos(pelicula)
 	}
@@ -176,13 +175,25 @@ class Controlador {
 	}
 
 	/**
+	 * Método que coge el listado y lo lleva a la vista para que lo muestre
+	 */
+	obtenerListado(nombre){
+		let lista=this.modelo.pulsarListado()
+		console.log(lista)
+		this.vistaListado.mostrarListado(lista)
+		this.pulsarPelicula(nombre)
+		
+		//Como tarda en recibir la lista llamamos al listado despues de 1 segundo
+	}
+
+	/**
 	 * Método que mandar al modelo los datos de la pelicula modificada y su id
 	 * @param {Int} id 
 	 * @param {Object} pelicula 
 	 */
 	modificarPelicula(id, pelicula){
 		console.log(id)
-		this.modelo.modificarPelicula(id, pelicula, this.pulsarListado.bind(this))
+		this.modelo.modificarPelicula(id, pelicula, this.obtenerListado.bind(this, pelicula.nombre))
 	}
 }
 const app= new Controlador()
