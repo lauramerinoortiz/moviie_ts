@@ -23,6 +23,7 @@ export class Modelo{
 	 * @returns lista que es un array
 	 */
 	pulsarListado(){
+		this.idb.listadoPeliculas()
 		let lista=this.idb.lista
 		return lista
 	}
@@ -45,5 +46,11 @@ export class Modelo{
 	 */
 	buscarNombre(nombre, callback){
 		this.idb.buscarNombre(nombre, callback)
+	}
+
+	modificarPelicula(id, pelicula, callback){
+		console.log(id)
+		this.idb.modificarPelicula(id, pelicula, callback)
+		
 	}
 }

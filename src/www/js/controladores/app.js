@@ -98,13 +98,14 @@ class Controlador {
     }
 	
 	/**
-	 * Método que manda la pelicula a la vista
+	 * Método que manda la pelicula a la vista para mostrar sus datos
 	 * @param {Object} pelicula 
 	 */
 	mostrarDatos(pelicula){
 		this.ocultarVistas()
 		this.vistaDatos.mostrar(true)
 		console.log('app pelicula: '+pelicula)
+		this.vistaModificar.mostrarDatos(pelicula)
 		this.vistaDatos.mostrarDatos(pelicula)
 	}
 
@@ -126,9 +127,9 @@ class Controlador {
     /**
      * Método que muestra la pantalla de confimacion de eliminacion
      */
-    mostrarModificar(){
+    mostrarModificar(pelicula){
         this.ocultarVistas()
-        this.vistaModificar.mostrar(true)
+		this.vistaModificar.mostrar(true)
     }
 
 	/**
@@ -172,6 +173,16 @@ class Controlador {
 	 */
 	mandarLista(lista){
 		this.vistaBuscar.listar(lista)
+	}
+
+	/**
+	 * Método que mandar al modelo los datos de la pelicula modificada y su id
+	 * @param {Int} id 
+	 * @param {Object} pelicula 
+	 */
+	modificarPelicula(id, pelicula){
+		console.log(id)
+		this.modelo.modificarPelicula(id, pelicula, this.pulsarListado.bind(this))
 	}
 }
 const app= new Controlador()

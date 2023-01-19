@@ -220,7 +220,7 @@ header nav ul li:first-child{
     }
 }
 
-#camposrellenos{
+#camposrellenos, #camposrellenosEditar{
     display: none;
     color: white;
 }

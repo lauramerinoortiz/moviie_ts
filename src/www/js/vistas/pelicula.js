@@ -2,6 +2,7 @@
 
 export class Pelicula{
     constructor(){
+        this.id=Date.now()
         this.nombre=''     //texto corto
         this.descripcion=''        //texto largo
         this.fecha=''             //date estreno

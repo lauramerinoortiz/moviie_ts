@@ -27,7 +27,7 @@ export class Idb{
 		}
 		peticion.onupgradeneeded =(event) =>{
 			this.bd=event.target.result
-			const objectStore= this.bd.createObjectStore('Tabla', {keyPath :'nombre'})		//Objeto para guardar los datos
+			const objectStore= this.bd.createObjectStore('Tabla', {keyPath :'id'})		//Objeto para guardar los datos
             
         }
 		peticion.onerror=function(){		//si va mal
@@ -49,6 +49,7 @@ export class Idb{
     /**
      * Método que lee la base de datos y saca el listado
      */
+    
     listadoPeliculas(){
         const objectStore =this.bd.transaction('Tabla', 'readonly').objectStore('Tabla')
 		const peticion = objectStore.getAll()
@@ -60,6 +61,12 @@ export class Idb{
         }
     }
 
+    /**
+     * Método que recibe los datos de busqueda y devuelve los resultados de la misma
+     * @param {boolean} vista 
+     * @param {String} genero 
+     * @param {Method} callback 
+     */
     buscar(vista, genero, callback){
         const objectStore = this.bd.transaction("Tabla").objectStore("Tabla");
 		this.listaResultados = []
@@ -104,5 +111,44 @@ export class Idb{
 				callback(this.result)
 			}
 		}  
+    }
+
+    /**
+     * Método que busca en la base de datos y modifica la pelicula
+     * @param {Int} id 
+     * @param {String} pelicula 
+     * @param {Method} callback 
+     */
+    modificarPelicula( id, pelicula, callback){
+        const objectStore =this.bd.transaction ('Tabla', 'readwrite').objectStore('Tabla')
+        const peticion = objectStore.get(parseInt(id))
+        
+        peticion.onerror=(event) =>{
+            console.log('Falló la lectura')
+        }
+        peticion.onsuccess=(event) =>{
+            const data = event.target.result
+            console.log('Leído', data)
+            //Datos cambiados
+            data.nombre=pelicula.nombre
+            data.descripcion=pelicula.descripcion
+            data.fecha=pelicula.fecha
+            data.duracion=pelicula.duracion
+            data.vista=pelicula.vista
+            data.genero=pelicula.genero
+            data.plataforma=pelicula.plataforma
+            data.imagen=pelicula.imagen
+
+            const peticion2 = objectStore.put(data)
+            peticion2.onerror =(event) =>{
+                console.log('No se pudo actualizar')
+                callback()
+            }
+            peticion2.onsuccess =(event) => {
+                console.log('Se actualizó')
+                callback()
+            }
+        }
+        
     }
 }

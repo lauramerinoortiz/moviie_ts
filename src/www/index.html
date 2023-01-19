@@ -155,13 +155,14 @@
                     <option>Otro</option>
                 </select><br>
                 <label for="checkbok">Plataforma disponible:</label>
-                <label><input type="checkbox" value="HBO" checked>HBO</label>
-                <label><input type="checkbox" value="Netflix">Netflix</label>
-                <label><input type="checkbox" value="Disney">Disney+</label><br>
-                <label><input type="checkbox" value="Amazon">Amazon Prime</label>
-                <label>Añadir imagen <input type="file"></label>
+                <label><input type="checkbox" value="hboEditar" id="hboEditar" checked>HBO</label>
+                <label><input type="checkbox" value="netflixEditar"  id="netflixEditar">Netflix</label>
+                <label><input type="checkbox" value="disneyEditar" id="disneyEditar">Disney+</label><br>
+                <label><input type="checkbox" value="amazonEditar" id="amazonEditar">Amazon Prime</label><br>
+                <label for="imagen">URL de imagen <input type="text" id="imagenEditar"></label>
             </div>
         </form>
+        <p id="camposrellenosEditar">*Debe rellenar todos los campos con asterico</p>
         <button class="btnEliminar">Cancelar</button>
         <button class="btnModificar">Enviar</button>
     </div>
