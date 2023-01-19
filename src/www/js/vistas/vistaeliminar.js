@@ -13,6 +13,7 @@ export class VistaEliminar extends Vista {
      */
 	constructor(div, controlador) {
 		super(div)
+          this.id
           this.controlador = controlador
 
           this.div=document.getElementById('eliminar')
@@ -35,6 +36,10 @@ export class VistaEliminar extends Vista {
       * Método para cuando pulsamos el boton aceptar
       */
      pulsarAceptar() {
-          this.controlador.pulsarCancelar()
+          this.controlador.eliminar(this.id)
+     }
+
+     setId(id){
+          this.id=id
      }
 }

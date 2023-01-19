@@ -39,8 +39,8 @@ class Controlador {
         this.divdatos=document.getElementById('datos')
 		this.vistaDatos=new VistaDatos(this.divdatos, this)
 
-        this.divEliminar=document.getElementById('inicio')
-        this.vistaEliminar=new VistaEliminar(this.diveliminar, this)
+		this.divEliminar=document.getElementById('eliminar')
+        this.vistaEliminar=new VistaEliminar(this.diveliminar,  this)
 
         this.divModificar=document.getElementById('modificar')
         this.vistaModificar=new VistaModificar(this.divModificar, this)
@@ -118,10 +118,19 @@ class Controlador {
     /**
      * Método que muestra la pantalla de confimacion de eliminacion
      */
-    mostrarEliminar(){
+    mostrarEliminar(id){
         this.ocultarVistas()
+		this.vistaEliminar.setId(id)
         this.vistaEliminar.mostrar(true)
     }
+
+	/**
+	 * Método que manda un id a la bbdd para borrar el registro asociado
+	 * @param {Int} id 
+	 */
+	eliminar(id){
+		this.modelo.eliminar(id, this.pulsarListado.bind(this))
+	}
 
     /**
      * Método que muestra la pantalla de confimacion de eliminacion
@@ -182,8 +191,6 @@ class Controlador {
 		console.log(lista)
 		this.vistaListado.mostrarListado(lista)
 		this.pulsarPelicula(nombre)
-		
-		//Como tarda en recibir la lista llamamos al listado despues de 1 segundo
 	}
 
 	/**

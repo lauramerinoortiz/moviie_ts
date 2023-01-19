@@ -53,4 +53,8 @@ export class Modelo{
 		this.idb.modificarPelicula(id, pelicula, callback)
 		
 	}
+
+	eliminar(id, callback){
+		this.idb.eliminar(id, callback)
+	}
 }

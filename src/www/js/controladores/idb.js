@@ -150,4 +150,15 @@ export class Idb{
         }
         
     }
+
+    eliminar(id, callback){
+        const datos = this.bd.transaction('Tabla','readwrite')		//iniciamos una transaccion
+		let request = datos.objectStore("Tabla").delete(id);
+        request.onsuccess=(event) => {
+            console.log('Se borro')
+            this.listadoPeliculas()
+            callback()
+        }
+        
+    }
 }

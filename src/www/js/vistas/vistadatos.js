@@ -19,7 +19,6 @@ export class VistaDatos extends Vista {
           this.eliminar=this.div.getElementsByTagName('button')[0]
           this.modificar=this.div.getElementsByTagName('button')[1]
 
-          this.eliminar.onclick = this.pulsarEliminar.bind(this)
           this.modificar.onclick=this.pulsarModificar.bind(this)
 
 	}
@@ -61,15 +60,16 @@ export class VistaDatos extends Vista {
           else{
                vista.appendChild(document.createTextNode('No'))
           }
-          
+
+          this.eliminar.onclick = this.pulsarEliminar.bind(this, pelicula.id)
      }
 
      /**
       * Método para cuando damos al boton eliminar
       */
-     pulsarEliminar(){
+     pulsarEliminar(id){
           this.controlador.ocultarVistas()
-          this.controlador.mostrarEliminar()
+          this.controlador.mostrarEliminar(id)
      }
 
      /**
