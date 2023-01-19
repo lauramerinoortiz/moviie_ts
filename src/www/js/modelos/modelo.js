@@ -48,12 +48,24 @@ export class Modelo{
 		this.idb.buscarNombre(nombre, callback)
 	}
 
+	/**
+	 * Método que recibe los datos y los envia al idb para que modifique un registro
+	 * @param {Int} id 
+	 * @param {Object} pelicula 
+	 * @param {Method} callback 
+	 */
+
 	modificarPelicula(id, pelicula, callback){
 		console.log(id)
 		this.idb.modificarPelicula(id, pelicula, callback)
 		
 	}
 
+	/**
+	 * Método que elimina un dato del idb 
+	 * @param {Int} id 
+	 * @param {Method} callback 
+	 */
 	eliminar(id, callback){
 		this.idb.eliminar(id, callback)
 	}
