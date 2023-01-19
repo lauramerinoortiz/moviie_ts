@@ -47,7 +47,7 @@ export class VistaListado extends Vista {
           this.listado.innerHTML = ""        //vaciamos el div
           if(lista==''){
                let vacio=document.createElement('h1')
-               vacio.appendChild(document.createTextNode('No hay datos aún. Dale a "Nueva" ya y añade una película.'))
+               vacio.appendChild(document.createTextNode('No hay datos aún. Dale ya a "Nueva" y añade una película.'))
                this.listado.appendChild(vacio)
           }
           else{
