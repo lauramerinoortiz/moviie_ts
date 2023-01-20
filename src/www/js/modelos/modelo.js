@@ -33,7 +33,7 @@ export class Modelo{
 	 * @param {Boolean} vista 
 	 * @param {String} genero 
 	 * @param {Method} callback 
-	 * @returns 
+	 * @returns array 
 	 */
 	buscar(vista, genero, callback){
 		let lista=this.idb.buscar(vista, genero, callback)
