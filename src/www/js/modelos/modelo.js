@@ -5,9 +5,9 @@ export class Modelo{
 	 * Constructor de la clase
 	 * @param {Object} controlador para que el modelo mire al controlador
 	 */
-	constructor(controlador) {
+	constructor(controlador, callback) {
 		this.controlador = controlador
-		this.idb=new Idb()
+		this.idb=new Idb(callback)
 	}
 
 	/**

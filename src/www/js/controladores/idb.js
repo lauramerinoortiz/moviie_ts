@@ -2,11 +2,12 @@
 
 
 export class Idb{
-    constructor(){
+    constructor(callback){
         this.bd
         this.conexion=null
         this.iniciarBase(this.bd)
         this.lista
+        this.callback=callback
     }
 
     /**
@@ -22,6 +23,7 @@ export class Idb{
 			peticion.onsuccess=(event)=>{
                 console.log('Base de datos cargada')
 				this.lista=event.target.result
+                this.callback()
 			}
 		}
 		peticion.onupgradeneeded =(event) =>{

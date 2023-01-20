@@ -25,9 +25,11 @@ class Controlador {
 	 */
 	iniciar() {
 		console.log('¡Bienvenido a Moviie! La diversión te espera fuera de la consola.')
-		this.modelo=new Modelo(this)
+		this.modelo=new Modelo(this, this.iniciar2.bind(this))
+	}
 
-        this.nav = document.getElementsByTagName('nav')[0]
+	iniciar2(){
+		this.nav = document.getElementsByTagName('nav')[0]
 		this.vistaNav = new VistaNav(this.nav, this)
 
         this.divlistado=document.getElementById('inicio')
@@ -49,7 +51,7 @@ class Controlador {
         this.vistaBuscar=new VistaBuscar(this.divBuscar, this)
 		
         this.ocultarVistas()
-		this.vistaListado.mostrar(true)
+		this.pulsarListado()
 	}
 
 	/**
@@ -129,7 +131,7 @@ class Controlador {
 	 * @param {Int} id 
 	 */
 	eliminar(id){
-		this.modelo.eliminar(id, this.pulsarListado.bind(this))
+		this.modelo.eliminar(id, this.iniciar.bind(this))
 	}
 
     /**
