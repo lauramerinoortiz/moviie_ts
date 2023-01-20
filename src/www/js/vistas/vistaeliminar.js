@@ -39,6 +39,10 @@ export class VistaEliminar extends Vista {
           this.controlador.eliminar(this.id)
      }
 
+     /**
+      * Método que setea el id
+      * @param {Int} id 
+      */
      setId(id){
           this.id=id
      }

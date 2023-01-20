@@ -151,6 +151,11 @@ export class Idb{
         
     }
 
+    /**
+     * Método que elimina un dato de la bbd según el id que tenga
+     * @param {Int} id 
+     * @param {Mehtod} callback 
+     */
     eliminar(id, callback){
         const datos = this.bd.transaction('Tabla','readwrite')		//iniciamos una transaccion
 		let request = datos.objectStore("Tabla").delete(id);
