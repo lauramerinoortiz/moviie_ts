@@ -120,7 +120,7 @@ export class Idb{
      */
     modificarPelicula( id, pelicula, callback){
         const objectStore =this.bd.transaction ('Tabla', 'readwrite').objectStore('Tabla')
-        const peticion = objectStore.get(parseInt(id))
+        const peticion = objectStore.get(id)
         
         peticion.onerror=(event) =>{
             console.log('Falló la lectura')

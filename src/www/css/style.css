@@ -89,6 +89,7 @@ header nav ul li:first-child{
     justify-content:space-around;
     margin: auto;
     gap: 30px;
+    min-height: 600px;
 }
 
 #listado h1, #nueva h1, #datos h1, #eliminar h1, #modificar h1{
