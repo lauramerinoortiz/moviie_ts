@@ -32,7 +32,7 @@ export class Pelicula{
      * Método para setear el nombre
      * @param {String} nombre 
      */
-    setNombre(nombre:string){
+    setNombre(nombre:string):void{
         this.nombre=nombre
     }
 
@@ -40,7 +40,7 @@ export class Pelicula{
      * Método para setear la descripcion
      * @param {String} descripcion 
      */
-    setDescripcion(descripcion:string){
+    setDescripcion(descripcion:string):void{
         this.descripcion=descripcion
     }
 
@@ -48,7 +48,7 @@ export class Pelicula{
      * Método para setear la fecha
      * @param {Date} fecha 
      */
-    setFecha(fecha:string){
+    setFecha(fecha:string):void{
         this.fecha=fecha
     }
 
@@ -56,7 +56,7 @@ export class Pelicula{
      * Método para setear la duracion
      * @param {Int} duracion 
      */
-    setDuracion(duracion:number){
+    setDuracion(duracion:number):void{
         this.duracion=duracion
     }
 
@@ -64,7 +64,7 @@ export class Pelicula{
      * Método para setear el atributo vista
      * @param {Boolean} vista 
      */
-    setVista(vista:boolean){
+    setVista(vista:boolean):void{
         this.vista=vista
     }
 
@@ -72,7 +72,7 @@ export class Pelicula{
      * Método para setear el genero
      * @param {String} genero 
      */
-    setGenero(genero:string){
+    setGenero(genero:string):void{
         this.genero=genero
     }
 
@@ -80,7 +80,7 @@ export class Pelicula{
      * Método para setear las plataformas en las que esta disponible la pelicula
      * @param {Set} plataforma 
      */
-    setPlataforma(plataforma:any){
+    setPlataforma(plataforma:any):void{
         let clon = new Set()
         for(let item of plataforma){
             clon.add(item)
@@ -92,7 +92,7 @@ export class Pelicula{
      * Método para setear la url de la imagen asociada
      * @param {String} imagen 
      */
-    setImagen(imagen:string){
+    setImagen(imagen:string):void{
         this.imagen=imagen
     }
 }

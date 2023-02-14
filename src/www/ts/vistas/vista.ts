@@ -3,12 +3,12 @@
  * Clase Vista con métodos y atributos general que tendrán todas las Vistas 
 */
 export class Vista{
-	public div:HTMLDivElement
+	public div:HTMLElement
 	/**
 	 * Contructor de la clase Vista
 	 * @param {Objeto} divinicio div de la vista
 	 */
-	constructor(divinicio:HTMLDivElement){
+	constructor(divinicio:HTMLElement){
 		this.div=divinicio
 	}
 	
@@ -16,7 +16,7 @@ export class Vista{
 	 * Método mostrar que pone el div de la Vista visualizándose u ocultándolo
 	 * @param {boolean} ver recibe un true o un false
 	 */
-	mostrar(ver:boolean){
+	mostrar(ver:boolean):void{
 		if(ver){
 			this.div.style.display='block'
 			console.log('mostrando ', this.div)

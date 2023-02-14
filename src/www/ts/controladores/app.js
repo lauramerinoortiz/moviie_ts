@@ -11,7 +11,7 @@ import {VistaBuscar} from '../vistas/vistabuscar.js'
 /**
  * Clase Controlador que administra las vistas
  */
-class Controlador {
+export class Controlador {
 	/**
 	 * Constructor de la clase Controlador
 	 * Cuando carga la web ejecuta el método iniciar

@@ -5,13 +5,15 @@ import {Vista} from './vista.js'
  * Gestiona los elementos y métodos de esta Vista
  */
 export class VistaBuscar extends Vista {
-
+     public div:HTMLElement|any
+     private controlador:any
+     private aceptar:HTMLElement
 	/**
      * Contructor de la clase VistaBuscar
      * @param {HTMLDivElement} div Div de la vista
      * @param {Object} controlador Controlador de la vista
      */
-	constructor(div, controlador) {
+	constructor(div: HTMLElement, controlador: any) {
 		super(div)
           this.controlador = controlador
 
@@ -42,8 +44,8 @@ export class VistaBuscar extends Vista {
       * Método que saca las peliculas según la lista de resultados que recibe
       * @param {Array} lista 
       */
-     listar(lista){
-          let resul=document.getElementById('resul')
+     listar(lista:any):void{
+          let resul:any=document.getElementById('resul')
           resul.innerHTML = ""        //vaciamos el div
           if(lista==''){      //si la lista viene vacia porque no hay coincidencias
                let vacio=document.createElement('h2')
@@ -77,9 +79,9 @@ export class VistaBuscar extends Vista {
      /**
       * Método para añadir el método onclick a cada pelicula
       */
-     anadirClick(){
-          let div=document.getElementById('resul')
-          let listado=div.getElementsByClassName('pelicula')
+     anadirClick():void{
+          let div:any=document.getElementById('resul')
+          let listado:any=div.getElementsByClassName('pelicula')
           for(let peli of listado){
                peli.onclick=this.pulsarPelicula.bind(this)
           }
@@ -88,7 +90,7 @@ export class VistaBuscar extends Vista {
      /**
       * Método para cuando damos click a una pelicula
       */
-     pulsarPelicula(){
+     pulsarPelicula():void{
           this.controlador.pulsarPelicula()
      }
 }
