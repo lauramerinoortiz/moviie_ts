@@ -8,7 +8,7 @@ import {Vista} from './vista.js'
 export class VistaListado extends Vista {
      public controlador: Controlador
      public listado:HTMLInputElement
-     public peliculas:Array<HTMLElement>
+     public peliculas:HTMLCollection
 	/**
      * Contructor de la clase VistaListado
      * @param {HTMLDivElement} div Div de la vista
@@ -20,18 +20,7 @@ export class VistaListado extends Vista {
 
           this.listado=<HTMLInputElement>document.getElementById('listado')
           this.peliculas=document.getElementsByClassName('pelicula')
-          this.anadirClick()
 	}
-
-     /**
-      * Método que añade a cada div de pelicula el onclick al metodo pulsarPelicula del controlador
-      */
-     anadirClick():void{
-          for(let peli of this.peliculas){
-               let nombre=peli.lastChild.innerHTML
-               peli.onclick=this.pulsarPelicula.bind(this, nombre)
-          }
-     }
 
      /**
       * Método para cuando damos click a una pelicula
@@ -74,8 +63,9 @@ export class VistaListado extends Vista {
                     div.appendChild(titulo)
                     titulo.appendChild(document.createTextNode(item.nombre))
                     this.listado.appendChild(div)
+                    div.onclick=this.pulsarPelicula.bind(this, item.nombre)
                }
-               this.anadirClick()       //añadimos a todas las peliculas el onclick que abre sus datos
+               
           }
           
      }

@@ -17,16 +17,6 @@ class VistaListado extends vista_js_1.Vista {
         this.controlador = controlador;
         this.listado = document.getElementById('listado');
         this.peliculas = document.getElementsByClassName('pelicula');
-        this.anadirClick();
-    }
-    /**
-     * Método que añade a cada div de pelicula el onclick al metodo pulsarPelicula del controlador
-     */
-    anadirClick() {
-        for (let peli of this.peliculas) {
-            let nombre = peli.lastChild.innerHTML;
-            peli.onclick = this.pulsarPelicula.bind(this, nombre);
-        }
     }
     /**
      * Método para cuando damos click a una pelicula
@@ -65,8 +55,8 @@ class VistaListado extends vista_js_1.Vista {
                 div.appendChild(titulo);
                 titulo.appendChild(document.createTextNode(item.nombre));
                 this.listado.appendChild(div);
+                div.onclick = this.pulsarPelicula.bind(this, item.nombre);
             }
-            this.anadirClick(); //añadimos a todas las peliculas el onclick que abre sus datos
         }
     }
 }

@@ -40,7 +40,7 @@ export class VistaBuscar extends Vista {
 
           let genero=<HTMLSelectElement>document.getElementById('generoBuscar')!
           let opcion=genero.options[genero.selectedIndex].value
-          let lista=this.controlador.pulsarBuscar(vista, opcion)
+          this.controlador.pulsarBuscar(vista, opcion)
      }
 
      /**
@@ -74,26 +74,15 @@ export class VistaBuscar extends Vista {
                     div.appendChild(titulo)
                     titulo.appendChild(document.createTextNode(item.nombre))
                     resul.appendChild(div)
+                    div.onclick=this.pulsarPelicula.bind(this, item.nombre)
                }
-               this.anadirClick()
-          }
-     }
-
-     /**
-      * Método para añadir el método onclick a cada pelicula
-      */
-     anadirClick():void{
-          let div:any=document.getElementById('resul')
-          let listado:any=div.getElementsByClassName('pelicula')
-          for(let peli of listado){
-               peli.onclick=this.pulsarPelicula.bind(this)
           }
      }
 
      /**
       * Método para cuando damos click a una pelicula
       */
-     pulsarPelicula():void{
-          this.controlador.pulsarPelicula()
+     pulsarPelicula(nombre:string):void{
+          this.controlador.pulsarPelicula(nombre)
      }
 }

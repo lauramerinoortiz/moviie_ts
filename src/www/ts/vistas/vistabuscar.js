@@ -34,7 +34,7 @@ class VistaBuscar extends vista_js_1.Vista {
         }
         let genero = document.getElementById('generoBuscar');
         let opcion = genero.options[genero.selectedIndex].value;
-        let lista = this.controlador.pulsarBuscar(vista, opcion);
+        this.controlador.pulsarBuscar(vista, opcion);
     }
     /**
      * Método que saca las peliculas según la lista de resultados que recibe
@@ -65,25 +65,15 @@ class VistaBuscar extends vista_js_1.Vista {
                 div.appendChild(titulo);
                 titulo.appendChild(document.createTextNode(item.nombre));
                 resul.appendChild(div);
+                div.onclick = this.pulsarPelicula.bind(this, item.nombre);
             }
-            this.anadirClick();
-        }
-    }
-    /**
-     * Método para añadir el método onclick a cada pelicula
-     */
-    anadirClick() {
-        let div = document.getElementById('resul');
-        let listado = div.getElementsByClassName('pelicula');
-        for (let peli of listado) {
-            peli.onclick = this.pulsarPelicula.bind(this);
         }
     }
     /**
      * Método para cuando damos click a una pelicula
      */
-    pulsarPelicula() {
-        this.controlador.pulsarPelicula();
+    pulsarPelicula(nombre) {
+        this.controlador.pulsarPelicula(nombre);
     }
 }
 exports.VistaBuscar = VistaBuscar;
