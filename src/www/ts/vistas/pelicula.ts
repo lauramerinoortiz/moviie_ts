@@ -7,7 +7,7 @@ export class Pelicula{
    public nombre: string
    public descripcion: string
    public fecha:string
-   public duracion: number
+   public duracion: string
    public vista: boolean
    public genero: string
    public plataforma:any
@@ -21,10 +21,10 @@ export class Pelicula{
         this.nombre=''     //texto corto
         this.descripcion=''        //texto largo
         this.fecha=''             //date estreno
-        this.duracion=0               //int
+        this.duracion=''               //int
         this.vista=false          //boolean
         this.genero=''         //select
-        this.plataforma=new Set()            //checkbox
+        this.plataforma=new Set()           //checkbox
         this.imagen=''         //imagen
     }
 
@@ -56,7 +56,7 @@ export class Pelicula{
      * Método para setear la duracion
      * @param {Int} duracion 
      */
-    setDuracion(duracion:number):void{
+    setDuracion(duracion:string):void{
         this.duracion=duracion
     }
 
@@ -81,7 +81,7 @@ export class Pelicula{
      * @param {Set} plataforma 
      */
     setPlataforma(plataforma:any):void{
-        let clon = new Set()
+        let clon= new Set()
         for(let item of plataforma){
             clon.add(item)
         }

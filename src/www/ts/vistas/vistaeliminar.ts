@@ -9,7 +9,7 @@ import {Controlador} from '../controladores/app.js'
 export class VistaEliminar extends Vista {
      private id: number
      private controlador:Controlador
-     public div:HTMLElement|any
+     public div:HTMLElement
      private cancelar:HTMLElement
      private aceptar:HTMLElement
 	/**
@@ -22,7 +22,7 @@ export class VistaEliminar extends Vista {
           this.id=0
           this.controlador = controlador
 
-          this.div=document.getElementById('eliminar')
+          this.div=document.getElementById('eliminar')!
           this.cancelar=this.div.getElementsByTagName('button')[0]
           this.cancelar.onclick = this.pulsarCancelar.bind(this)
 

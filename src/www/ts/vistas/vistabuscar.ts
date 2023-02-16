@@ -1,41 +1,44 @@
 "use strict" //activo modo estricto
+import { Controlador } from '../controladores/app.js'
 import {Vista} from './vista.js'
 /**
  * Clase VistaBuscar que muestra el formulario para buscar una pelicula
  * Gestiona los elementos y métodos de esta Vista
  */
 export class VistaBuscar extends Vista {
-     public div:HTMLElement|any
-     private controlador:any
-     private aceptar:HTMLElement
+     public div:HTMLElement
+     private controlador:Controlador
+     private aceptar:HTMLInputElement
 	/**
      * Contructor de la clase VistaBuscar
      * @param {HTMLDivElement} div Div de la vista
      * @param {Object} controlador Controlador de la vista
      */
-	constructor(div: HTMLElement, controlador: any) {
+	constructor(div: HTMLElement, controlador: Controlador) {
 		super(div)
           this.controlador = controlador
 
-          this.div=document.getElementById('buscar')
+          this.div=document.getElementById('buscar')!
 
-          this.aceptar=this.div.getElementsByTagName('button')[0]
+          this.aceptar=<HTMLInputElement>this.div.getElementsByTagName('button')[0]
           this.aceptar.onclick = this.pulsarAceptar.bind(this)
 	}
 
      /**
       * Método para cuando pulsamos el boton aceptar
       */
-     pulsarAceptar() {
-          let vista
-          if(document.getElementById('vistaSiBuscar').checked){
+     pulsarAceptar():void{
+          let vista=false
+          let vistaSi=<HTMLInputElement>document.getElementById('vistaSiBuscar')
+          let vistaNo=<HTMLInputElement>document.getElementById('vistaNoBuscar')
+          if(vistaSi.checked){
                vista=true
           }
-          if(document.getElementById('vistaNoBuscar').checked){
+          if(vistaNo.checked){
                vista=false
           }
 
-          let genero=document.getElementById('generoBuscar')
+          let genero=<HTMLSelectElement>document.getElementById('generoBuscar')!
           let opcion=genero.options[genero.selectedIndex].value
           let lista=this.controlador.pulsarBuscar(vista, opcion)
      }

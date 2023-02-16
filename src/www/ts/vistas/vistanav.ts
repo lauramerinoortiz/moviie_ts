@@ -1,10 +1,14 @@
 "use strict"
+
+import { Controlador } from "../controladores/app"
+
+
 /**
  *	Implementa una vista del menú de navegación.
  */
 export class VistaNav{
 	public nav:HTMLDivElement
-	public controlador:any
+	public controlador:Controlador
 	private liLogo:HTMLElement
 	private liListado:HTMLElement
 	private liNuevo:HTMLElement
@@ -14,8 +18,8 @@ export class VistaNav{
 	 *	@param {HTMLElement} nav Nav de HTML en el que se desplegará la vista.
 	 *	@param {Object} controlador Controlador de la vista del administrador.
 	 */
-	constructor(nav:HTMLDivElement, controlador:any) {
-		this.controlador = controlador
+	constructor(nav:HTMLDivElement, controlador:Controlador) {
+		this.controlador = controlador!
 		this.nav = nav
 		
 		this.liLogo = this.nav.getElementsByTagName('li')[0]
