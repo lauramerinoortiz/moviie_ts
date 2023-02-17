@@ -1,10 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.VistaNav = void 0;
 /**
  *	Implementa una vista del menú de navegación.
  */
-class VistaNav {
+export class VistaNav {
     /**
      *	Constructor de la clase.
      *	@param {HTMLElement} nav Nav de HTML en el que se desplegará la vista.
@@ -41,4 +39,3 @@ class VistaNav {
         this.controlador.pulsarNavBuscar();
     }
 }
-exports.VistaNav = VistaNav;

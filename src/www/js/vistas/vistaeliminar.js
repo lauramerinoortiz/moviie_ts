@@ -1,12 +1,10 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.VistaEliminar = void 0;
-const vista_js_1 = require("./vista.js");
+import { Vista } from './vista.js';
 /**
  * Clase VistaNueva que muestra el mensaje de confirmacion para eliminar
  * Gestiona los elementos y métodos de esta Vista
  */
-class VistaEliminar extends vista_js_1.Vista {
+export class VistaEliminar extends Vista {
     /**
      * Contructor de la clase VistaEliminar
      * @param {HTMLElement} div Div de la vista
@@ -42,4 +40,3 @@ class VistaEliminar extends vista_js_1.Vista {
         this.id = id;
     }
 }
-exports.VistaEliminar = VistaEliminar;

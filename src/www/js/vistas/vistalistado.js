@@ -1,12 +1,10 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.VistaListado = void 0;
-const vista_js_1 = require("./vista.js");
+import { Vista } from './vista.js';
 /**
  * Clase VistaListado que muestra el CRUD de categorías y subcategorías
  * Gestiona los elementos y métodos de esta Vista
  */
-class VistaListado extends vista_js_1.Vista {
+export class VistaListado extends Vista {
     /**
      * Contructor de la clase VistaListado
      * @param {HTMLDivElement} div Div de la vista
@@ -60,4 +58,3 @@ class VistaListado extends vista_js_1.Vista {
         }
     }
 }
-exports.VistaListado = VistaListado;

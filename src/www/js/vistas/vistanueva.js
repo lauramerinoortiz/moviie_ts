@@ -1,13 +1,11 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.VistaNueva = void 0;
-const pelicula_js_1 = require("./pelicula.js");
-const vista_js_1 = require("./vista.js");
+import { Pelicula } from './pelicula.js';
+import { Vista } from './vista.js';
 /**
  * Clase VistaNueva que muestra el formulario para una nueva pelicula
  * Gestiona los elementos y métodos de esta Vista
  */
-class VistaNueva extends vista_js_1.Vista {
+export class VistaNueva extends Vista {
     /**
      * Contructor de la clase VistaNueva
      * @param {HTMLDivElement} div Div de la vista
@@ -107,7 +105,7 @@ class VistaNueva extends vista_js_1.Vista {
             this.duracion.style.borderColor = "red";
         }
         else {
-            let pelicula = new pelicula_js_1.Pelicula();
+            let pelicula = new Pelicula();
             pelicula.setNombre(nombre);
             pelicula.setDescripcion(descripcion);
             pelicula.setFecha(fecha);
@@ -134,4 +132,3 @@ class VistaNueva extends vista_js_1.Vista {
         console.log(this.plataformas);
     }
 }
-exports.VistaNueva = VistaNueva;

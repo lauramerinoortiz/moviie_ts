@@ -99,8 +99,8 @@ export class VistaModificar extends Vista {
                peliculaNueva.setPlataforma(this.plataformas)
 
                this.vista=false
-               let vistaSi=<HTMLInputElement>document.getElementById('vistaSi')
-               let vistaNo=<HTMLInputElement>document.getElementById('vistaNo')
+               let vistaSi=<HTMLInputElement>document.getElementById('vistaSiEditar')
+               let vistaNo=<HTMLInputElement>document.getElementById('vistaNoEditar')
                if(vistaSi.checked){
                     this.vista=true
                }
@@ -170,7 +170,14 @@ export class VistaModificar extends Vista {
           if(this.plataformas.has('Disney')){
                this.disney.checked=true
           }
-
+          let vistaSi=<HTMLInputElement>document.getElementById('vistaSiEditar')
+          let vistaNo=<HTMLInputElement>document.getElementById('vistaNoEditar')
+          if(pelicula.vista==true){
+               vistaSi.checked;
+          }
+          else{
+               vistaNo.checked
+          }
           
           this.aceptar.onclick = this.pulsarAceptar.bind(this, pelicula.id)
           

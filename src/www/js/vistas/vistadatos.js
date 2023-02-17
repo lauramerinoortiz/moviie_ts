@@ -1,12 +1,10 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.VistaDatos = void 0;
-const vista_js_1 = require("./vista.js");
+import { Vista } from './vista.js';
 /**
  * Clase VistaDatos que muestra el formulario para una nueva pelicula
  * Gestiona los elementos y métodos de esta Vista
  */
-class VistaDatos extends vista_js_1.Vista {
+export class VistaDatos extends Vista {
     /**
      * Contructor de la clase VistaDatos
      * @param {HTMLDivElement} div Div de la vista
@@ -75,4 +73,3 @@ class VistaDatos extends vista_js_1.Vista {
         this.controlador.mostrarModificar();
     }
 }
-exports.VistaDatos = VistaDatos;

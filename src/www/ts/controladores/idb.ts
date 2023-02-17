@@ -23,17 +23,17 @@ export class Idb{
      */
     iniciarBase(){
 		const peticion =window.indexedDB.open("Peliculas")
-		peticion.onsuccess= (evento) =>{			//si va bien crea una bbdd
+		peticion.onsuccess= (evento:any) =>{			//si va bien crea una bbdd
 			this.bd=evento.target.result;		//la guardamos
 			const objectStore =this.bd.transaction('Tabla', 'readonly').objectStore('Tabla')
 			const peticion = objectStore.getAll()
-			peticion.onsuccess=(event)=>{
+			peticion.onsuccess=(event:any)=>{
                 console.log('Base de datos cargada')
 				this.lista=event.target.result
                 this.callback()
 			}
 		}
-		peticion.onupgradeneeded =(event) =>{
+		peticion.onupgradeneeded =(event:any) =>{
 			this.bd=event.target.result
 			const objectStore= this.bd.createObjectStore('Tabla', {keyPath :'id'})		//Objeto para guardar los datos
             
@@ -61,7 +61,7 @@ export class Idb{
     listadoPeliculas(){
         const objectStore =this.bd.transaction('Tabla', 'readonly').objectStore('Tabla')
 		const peticion = objectStore.getAll()
-		peticion.onsuccess=(event)=>{
+		peticion.onsuccess=(event:any)=>{
             this.lista=event.target.result
             console.log(this.lista)
         }
@@ -81,7 +81,7 @@ export class Idb{
 		this.listaResultados = []
 		
 		const cursor1 = objectStore.openCursor()
-		cursor1.onsuccess = (evento) => {
+		cursor1.onsuccess = (evento:any) => {
 			const cursor = evento.target.result;
 			if (cursor) {
 				let pelicula = cursor.value
@@ -104,7 +104,7 @@ export class Idb{
         const objectStore = this.bd.transaction("Tabla").objectStore("Tabla");
 		this.result
 		const cursor1 = objectStore.openCursor()
-		cursor1.onsuccess = (evento) => {
+		cursor1.onsuccess = (evento:any) => {
 			const cursor = evento.target.result;
 			if (cursor) {
 				let pelicula = cursor.value
@@ -129,10 +129,10 @@ export class Idb{
         const objectStore =this.bd.transaction ('Tabla', 'readwrite').objectStore('Tabla')
         const peticion = objectStore.get(id)
         
-        peticion.onerror=(event) =>{
+        peticion.onerror=(event:any) =>{
             console.log('Falló la lectura')
         }
-        peticion.onsuccess=(event) =>{
+        peticion.onsuccess=(event:any) =>{
             const data = event.target.result
             console.log('Leído', data)
             //Datos cambiados
@@ -147,12 +147,12 @@ export class Idb{
 
             const peticion2 = objectStore.put(data)
             this.listadoPeliculas()
-            peticion2.onerror =(event) =>{
+            peticion2.onerror =(event:any) =>{
                 console.log('No se pudo actualizar')
                 
                 callback()
             }
-            peticion2.onsuccess =(event) => {
+            peticion2.onsuccess =(event:any) => {
                 console.log('Se actualizó')
                 callback()
             }
@@ -168,7 +168,7 @@ export class Idb{
     eliminar(id:number, callback:Function):void{
         const datos = this.bd.transaction('Tabla','readwrite')		//iniciamos una transaccion
 		let request = datos.objectStore("Tabla").delete(id);
-        request.onsuccess=(event) => {
+        request.onsuccess=(event:any) => {
             console.log('Se borro')
             this.listadoPeliculas()
             callback()

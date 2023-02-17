@@ -1,12 +1,10 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.VistaBuscar = void 0;
-const vista_js_1 = require("./vista.js");
+import { Vista } from './vista.js';
 /**
  * Clase VistaBuscar que muestra el formulario para buscar una pelicula
  * Gestiona los elementos y métodos de esta Vista
  */
-class VistaBuscar extends vista_js_1.Vista {
+export class VistaBuscar extends Vista {
     /**
      * Contructor de la clase VistaBuscar
      * @param {HTMLDivElement} div Div de la vista
@@ -76,4 +74,3 @@ class VistaBuscar extends vista_js_1.Vista {
         this.controlador.pulsarPelicula(nombre);
     }
 }
-exports.VistaBuscar = VistaBuscar;

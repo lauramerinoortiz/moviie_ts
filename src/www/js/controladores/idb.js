@@ -1,8 +1,6 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Idb = void 0;
 //activo modo estricto
-class Idb {
+export class Idb {
     constructor(callback) {
         this.bd;
         this.iniciarBase();
@@ -153,4 +151,3 @@ class Idb {
         };
     }
 }
-exports.Idb = Idb;

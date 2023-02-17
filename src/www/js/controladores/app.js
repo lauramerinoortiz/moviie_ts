@@ -1,18 +1,16 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Controlador = void 0;
-const modelo_js_1 = require("../modelos/modelo.js");
-const vistanav_js_1 = require("../vistas/vistanav.js");
-const vistalistado_js_1 = require("../vistas/vistalistado.js");
-const vistanueva_js_1 = require("../vistas/vistanueva.js");
-const vistadatos_js_1 = require("../vistas/vistadatos.js");
-const vistaeliminar_js_1 = require("../vistas/vistaeliminar.js");
-const vistamodificar_js_1 = require("../vistas/vistamodificar.js");
-const vistabuscar_js_1 = require("../vistas/vistabuscar.js");
+import { Modelo } from '../../js/modelos/modelo.js';
+import { VistaNav } from '../../js/vistas/vistanav.js';
+import { VistaListado } from '../../js/vistas/vistalistado.js';
+import { VistaNueva } from '../../js/vistas/vistanueva.js';
+import { VistaDatos } from '../../js/vistas/vistadatos.js';
+import { VistaEliminar } from '../../js/vistas/vistaeliminar.js';
+import { VistaModificar } from '../../js/vistas/vistamodificar.js';
+import { VistaBuscar } from '../../js/vistas/vistabuscar.js';
 /**
  * Clase Controlador que administra las vistas
  */
-class Controlador {
+export class Controlador {
     /**
      * Constructor de la clase Controlador
      * Cuando carga la web ejecuta el método iniciar
@@ -25,23 +23,23 @@ class Controlador {
      */
     iniciar() {
         console.log('¡Bienvenido a Moviie! La diversión te espera fuera de la consola.');
-        this.modelo = new modelo_js_1.Modelo(this, this.iniciar2.bind(this));
+        this.modelo = new Modelo(this, this.iniciar2.bind(this));
     }
     iniciar2() {
         this.nav = document.getElementsByTagName('nav')[0];
-        this.vistaNav = new vistanav_js_1.VistaNav(this.nav, this);
+        this.vistaNav = new VistaNav(this.nav, this);
         this.divlistado = document.getElementById('inicio');
-        this.vistaListado = new vistalistado_js_1.VistaListado(this.divlistado, this);
+        this.vistaListado = new VistaListado(this.divlistado, this);
         this.divnueva = document.getElementById('nueva');
-        this.vistaNueva = new vistanueva_js_1.VistaNueva(this.divnueva, this);
+        this.vistaNueva = new VistaNueva(this.divnueva, this);
         this.divdatos = document.getElementById('datos');
-        this.vistaDatos = new vistadatos_js_1.VistaDatos(this.divdatos, this);
+        this.vistaDatos = new VistaDatos(this.divdatos, this);
         this.divEliminar = document.getElementById('eliminar');
-        this.vistaEliminar = new vistaeliminar_js_1.VistaEliminar(this.divEliminar, this);
+        this.vistaEliminar = new VistaEliminar(this.divEliminar, this);
         this.divModificar = document.getElementById('modificar');
-        this.vistaModificar = new vistamodificar_js_1.VistaModificar(this.divModificar, this);
+        this.vistaModificar = new VistaModificar(this.divModificar, this);
         this.divBuscar = document.getElementById('buscar');
-        this.vistaBuscar = new vistabuscar_js_1.VistaBuscar(this.divBuscar, this);
+        this.vistaBuscar = new VistaBuscar(this.divBuscar, this);
         this.ocultarVistas();
         this.pulsarListado();
     }
@@ -152,7 +150,6 @@ class Controlador {
      */
     pulsarBuscar(vista, genero) {
         let lista = this.modelo.buscar(vista, genero, this.mandarLista.bind(this));
-        return lista;
     }
     /**
      * Método que manda a la vista la lista de elementos de la bsuqueda
@@ -180,5 +177,4 @@ class Controlador {
         this.modelo.modificarPelicula(id, pelicula, this.obtenerListado.bind(this, pelicula.nombre));
     }
 }
-exports.Controlador = Controlador;
 const app = new Controlador();

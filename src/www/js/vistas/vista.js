@@ -1,10 +1,8 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Vista = void 0;
 /**
  * Clase Vista con métodos y atributos general que tendrán todas las Vistas
 */
-class Vista {
+export class Vista {
     /**
      * Contructor de la clase Vista
      * @param {Objeto} divinicio div de la vista
@@ -26,4 +24,3 @@ class Vista {
         }
     }
 }
-exports.Vista = Vista;

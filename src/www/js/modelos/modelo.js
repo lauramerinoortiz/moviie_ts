@@ -1,15 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Modelo = void 0;
-const idb_js_1 = require("../controladores/idb.js");
-class Modelo {
+import { Idb } from '../../js/controladores/idb.js';
+export class Modelo {
     /**
      * Constructor de la clase
      * @param {Object} controlador para que el modelo mire al controlador
      */
     constructor(controlador, callback) {
         this.controlador = controlador;
-        this.idb = new idb_js_1.Idb(callback);
+        this.idb = new Idb(callback);
     }
     /**
      * Método que le pasa al idb un objeto de pelicula para que lo añana a la base de datos
@@ -36,7 +34,6 @@ class Modelo {
      */
     buscar(vista, genero, callback) {
         let lista = this.idb.buscar(vista, genero, callback);
-        return lista;
     }
     /**
      * Método que manda al idb un nombre para buscar sus datos en la bbdd
@@ -64,4 +61,3 @@ class Modelo {
         this.idb.eliminar(id, callback);
     }
 }
-exports.Modelo = Modelo;

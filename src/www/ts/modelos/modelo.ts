@@ -39,9 +39,8 @@ export class Modelo{
 	 * @param {Method} callback 
 	 * @returns array 
 	 */
-	buscar(vista:boolean, genero:string, callback:Function): Array<any>{
+	buscar(vista:boolean, genero:string, callback:Function):void{
 		let lista=this.idb.buscar(vista, genero, callback)
-		return lista
 	}
 
 	/**

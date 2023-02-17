@@ -189,9 +189,8 @@ export class Controlador {
 	 * @param {Boolean} vista 
 	 * @param {String} genero 
 	 */
-	pulsarBuscar(vista:boolean, genero:string):Array<any>{
+	pulsarBuscar(vista:boolean, genero:string):void{
 		let lista=this.modelo.buscar(vista, genero, this.mandarLista.bind(this))
-		return lista
 	}
 
 	/**

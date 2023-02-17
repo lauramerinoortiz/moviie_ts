@@ -1,13 +1,11 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.VistaModificar = void 0;
-const pelicula_js_1 = require("./pelicula.js");
-const vista_js_1 = require("./vista.js");
+import { Pelicula } from './pelicula.js';
+import { Vista } from './vista.js';
 /**
  * Clase VistaModificar que muestra el formulario para una nueva pelicula
  * Gestiona los elementos y métodos de esta Vista
  */
-class VistaModificar extends vista_js_1.Vista {
+export class VistaModificar extends Vista {
     /**
      * Contructor de la clase VistaModificar
      * @param {HTMLDivElement} div Div de la vista
@@ -66,7 +64,7 @@ class VistaModificar extends vista_js_1.Vista {
         }
         else {
             //Coger los datos del formulario
-            let peliculaNueva = new pelicula_js_1.Pelicula();
+            let peliculaNueva = new Pelicula();
             peliculaNueva.setNombre(this.nombre.value);
             peliculaNueva.setDescripcion(this.descripcion.value);
             peliculaNueva.setFecha(this.fecha.value);
@@ -74,8 +72,8 @@ class VistaModificar extends vista_js_1.Vista {
             peliculaNueva.setImagen(this.imagen.value);
             peliculaNueva.setPlataforma(this.plataformas);
             this.vista = false;
-            let vistaSi = document.getElementById('vistaSi');
-            let vistaNo = document.getElementById('vistaNo');
+            let vistaSi = document.getElementById('vistaSiEditar');
+            let vistaNo = document.getElementById('vistaNoEditar');
             if (vistaSi.checked) {
                 this.vista = true;
             }
@@ -138,6 +136,14 @@ class VistaModificar extends vista_js_1.Vista {
         if (this.plataformas.has('Disney')) {
             this.disney.checked = true;
         }
+        let vistaSi=document.getElementById('vistaSiEditar')
+        let vistaNo=document.getElementById('vistaNoEditar')
+        if(pelicula.vista==true){
+            vistaSi.checked;
+        }
+        else{
+            vistaNo.checked
+        }
         this.aceptar.onclick = this.pulsarAceptar.bind(this, pelicula.id);
     }
     /**
@@ -152,4 +158,3 @@ class VistaModificar extends vista_js_1.Vista {
         }
     }
 }
-exports.VistaModificar = VistaModificar;

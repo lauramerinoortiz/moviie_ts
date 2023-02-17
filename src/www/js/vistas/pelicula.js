@@ -1,10 +1,8 @@
 "use strict"; //activo modo estricto
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Pelicula = void 0;
 /**
  * Clase película que servirá de molde para crear objectos de ella
  */
-class Pelicula {
+export class Pelicula {
     /**
      * Constructor de la clase
      */
@@ -80,4 +78,3 @@ class Pelicula {
         this.imagen = imagen;
     }
 }
-exports.Pelicula = Pelicula;
